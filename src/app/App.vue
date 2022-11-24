@@ -22,12 +22,19 @@ import { VFooter } from './components/VFooter'
 <style module lang="scss">
 @import "../css/variables.scss";
 .root {
-  max-width: 1390px;
   align-items: center;
   background-color: $main-bg-color;
   width: 100%;
   height: 100%;
+}
 
+.header {
+  height: 40px;
+  width: 100%;
+}
+
+.content {
+  max-width: 1390px;
 }
 </style>
 
@@ -46,8 +53,8 @@ html {
   width: 100%;
 }
 
-#app {
-  max-width: 1390px;
+body {
+  background-color: $main-bg-color;
 }
 
 a {

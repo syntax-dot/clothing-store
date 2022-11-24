@@ -1,6 +1,8 @@
 <template>
   <div :class="$style.root">
-    <h1>LOGO</h1>
+    <div :class="$style.logo">
+      <h1>LOGO</h1>
+    </div>
   </div>
 </template>
 
@@ -15,7 +17,11 @@
   height: 100%;
 }
 
-.root > h1 {
+.logo {
+  text-align: center;
+}
+
+.logo > h1 {
   color: $main-text-color;
   font-size: 1.4rem;
 }
