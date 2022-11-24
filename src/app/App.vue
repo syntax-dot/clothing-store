@@ -38,6 +38,8 @@ import { VFooter } from './components/VFooter'
 
 .content {
   max-width: 1390px;
+  // margin: 0 auto;
+  height: 100%;
 }
 </style>
 
