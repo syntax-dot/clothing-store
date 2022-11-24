@@ -1,10 +1,6 @@
 import { RouteRecordRaw } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
-import TechnologyPage from '../views/TechnologyPage.vue'
-import FlightSchedulePage from '../views/FlightSchedulePage.vue'
-import AboutPage from '../views/AboutPage.vue'
-import ContactsPage from '../views/ContactsPage.vue'
-import GuaranteesPage from '../views/GuaranteesPage.vue'
+import ProductPage from '../views/ProductPage.vue'
 
 export const routes: RouteRecordRaw[] = [
   { path: '', component: HomePage, name: 'home' },
