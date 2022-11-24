@@ -1,11 +1,13 @@
 <template>
   <div :class="$style.root">
     <ProductView/>
+    <ProductActions/>
   </div>
 </template>
 
 <script lang="ts" setup>
-
+import { ProductActions } from '../ProductActions'
+import { ProductView } from '../ProductView'
 </script>
 
 <style module lang="scss">
