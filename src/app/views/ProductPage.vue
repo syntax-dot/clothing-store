@@ -9,5 +9,8 @@
 </script>
 
 <style module lang="scss">
-
+.root {
+  height: 100%;
+  width: 100%;
+}
 </style>

@@ -3,6 +3,6 @@ import { RouteRecordRaw } from 'vue-router'
 import ProductPage from '../views/ProductPage.vue'
 
 export const routes: RouteRecordRaw[] = [
-  { path: '/', component: ProductPage, name: 'home' },
+  { path: '', component: ProductPage, name: 'home' },
   // { path: '/product', component: ProductPage, name: 'product' },
 ]

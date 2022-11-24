@@ -13,6 +13,8 @@ import { HeaderIcons } from '../HeaderIcons'
 
 <style module lang="scss">
 .root {
+  position: sticky;
+  top: 0;
   display: grid;
   grid-template-columns: max-content max-content;
   justify-content: space-between;
