@@ -38,7 +38,7 @@ import { VFooter } from './components/VFooter'
 
 .content {
   max-width: 1390px;
-  // margin: 0 auto;
+  margin: 0 auto;
   height: 100%;
 }
 </style>
@@ -68,7 +68,7 @@ a {
 }
 
 h1 {
-  font-weight: 700;
+  text-transform: uppercase;
 }
 
 #app {

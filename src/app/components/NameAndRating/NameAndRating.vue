@@ -1,9 +1,15 @@
 <template>
-  <div :class="$style.root"/>
+  <div :class="$style.root">
+    <h2> {{ title }}</h2>
+    <h2> {{ vendorСode }}</h2>
+    <h2> {{ vendorСode }}</h2>
+  </div>
 </template>
 
 <script lang="ts" setup>
+import { NameAndRatingProps } from './NameAndRating.props'
 
+defineProps<NameAndRatingProps>()
 </script>
 
 <style module lang="scss">
