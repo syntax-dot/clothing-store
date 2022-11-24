@@ -1,14 +1,14 @@
 <template>
   <div :class="$style.root">
-    <VLogo/>
+    <HeaderLogo/>
 
-    <VIcons/>
+    <HeaderIcons/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VLogo } from '../VLogo'
-import { VIcons } from '../VIcons'
+import { HeaderLogo } from '../HeaderLogo'
+import { HeaderIcons } from '../HeaderIcons'
 </script>
 
 <style module lang="scss">
