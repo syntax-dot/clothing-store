@@ -22,6 +22,9 @@ import { VFooter } from './components/VFooter'
 <style module lang="scss">
 @import "../css/variables.scss";
 .root {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  grid-template-areas: 'Header' 'Content' 'Footer';
   align-items: center;
   background-color: $main-bg-color;
   width: 100%;
