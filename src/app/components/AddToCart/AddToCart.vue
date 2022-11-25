@@ -3,10 +3,9 @@
 </template>
 
 <script lang="ts" setup>
-import { BaseButtonProps, BaseButtonEmits } from './BaseButton.props'
+import { AddToCartEmits } from './AddToCart.props'
 
-defineProps<BaseButtonProps>()
-defineEmits<BaseButtonEmits>()
+defineEmits<AddToCartEmits>()
 </script>
 
 <style module lang="scss">
