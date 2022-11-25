@@ -57,7 +57,8 @@
 .link {
   border-bottom: 1px solid $line_color;
   margin-left: 4px;
-  transition: 0.2s ease-in-out;
+  transition: inherit;
+  // transition: 0.2s ease-in-out;
 
   &:hover {
     border-bottom: 1px solid #000;
