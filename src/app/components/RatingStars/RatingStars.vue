@@ -1,8 +1,11 @@
 <template>
   <div :class="$style.root">
-    <div v-for="star in rating">
-      <img src="./icons/activeStar.svg">
-      <img src="./icons/inactiveStar.svg">
+    <div v-for="index in 5"
+         :key="index">
+      <img v-if="index <= rating"
+           src="./icons/activeStar.svg">
+      <img v-else
+           src="./icons/inactiveStar.svg">
     </div>
   </div>
 </template>
@@ -15,7 +18,7 @@ defineProps<RatingStarsProps>()
 
 <style module lang="scss">
 .root {
-  width: 100%;
-  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
 }
 </style>
