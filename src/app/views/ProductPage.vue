@@ -1,6 +1,7 @@
 <template>
   <div :class="$style.root">
     <ProductView/>
+    <ImagePresentation/>
   </div>
 </template>
 
