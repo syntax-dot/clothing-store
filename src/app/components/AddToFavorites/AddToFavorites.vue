@@ -1,28 +1,28 @@
 <template>
-  <button :class="$style.root" @click="handleClick">Добавить в корзину</button>
+  <button :class="$style.root"
+          @click="handleClick">
+    <img src="./favorite.svg" alt="favorite">
+  </button>
 </template>
 
 <script lang="ts" setup>
-import { AddToCartEmits } from './AddToCart.props'
+import { AddToFavoritesEmits } from './AddToFavorites.props'
 
-const emit = defineEmits<AddToCartEmits>()
+const emit = defineEmits<AddToFavoritesEmits>()
 
 function handleClick() {
-  emit('addedToCart')
-  console.log('addedToCart')
+  emit('addedToFavorites')
+  console.log('addedToFavorites')
 }
 </script>
 
 <style module lang="scss">
 @import "../../../css/variables.scss";
+
 .root {
-  width: 200px;
+  width: 44px;
   height: 44px;
-  border: 1px solid #333;
-  color: #fff;
   background-color: $btn-bg-color;
-  font-size: 1.4rem;
-  text-align: center;
   margin: 8px 28px 8px 28px;
   cursor: pointer;
   transition: .3s ease-in-out;

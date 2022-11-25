@@ -1,3 +1,3 @@
 export interface AddToCartEmits {
-  (emit: 'added'): void
+  (emit: 'addedToCart'): void
 }
