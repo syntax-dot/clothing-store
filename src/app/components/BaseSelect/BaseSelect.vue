@@ -50,6 +50,11 @@ function handleClick() {
 .arrow_down {
   transition: transform .3s;
   transform: rotate(0deg);
+  cursor: pointer;
+
+  &:hover {
+    scale: 1.1;
+  }
 }
 
 .arrow_up {
