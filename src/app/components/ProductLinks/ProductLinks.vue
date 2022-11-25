@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.root">
-    <div>
+    <div :class="$style.link_container">
       <img src="./icons/clothes.svg"
            alt="clothes">
       <a :class="$style.link" href="#">
@@ -8,7 +8,7 @@
       </a>
     </div>
 
-    <div>
+    <div :class="$style.link_container">
       <img src="./icons/clock.svg"
            alt="clock">
       <a :class="$style.link" href="#">
@@ -16,7 +16,7 @@
       </a>
     </div>
 
-    <div>
+    <div :class="$style.link_container">
       <img src="./icons/pay.svg"
            alt="clock">
       <a :class="$style.link" href="#">
@@ -39,6 +39,19 @@
 
 .root > div {
   display: flex;
+}
+
+// Эксремальная запись
+// .root > div:hover > img {
+//   scale: 1.1;
+// }
+
+.link_container {
+  transition: 0.2s ease-in-out;
+
+  &:hover > img {
+    scale: 1.1;
+  }
 }
 
 .link {
