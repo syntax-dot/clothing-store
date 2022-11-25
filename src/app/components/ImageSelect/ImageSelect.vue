@@ -1,5 +1,7 @@
 <template>
-  <div :class="$style.root"/>
+  <div :class="$style.root">
+    <div v-for="image in images"/>
+  </div>
 </template>
 
 <script lang="ts" setup>
