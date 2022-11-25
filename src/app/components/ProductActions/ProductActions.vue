@@ -2,11 +2,13 @@
   <div :class="$style.root">
     <BaseSelect/>
     <QuantitySelection v-model="productQuantity"/>
+    <AddToCart/>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { AddToCart } from '../AddToCart'
 import { BaseSelect } from '../BaseSelect'
 import { QuantitySelection } from '../QuantitySelection'
 
