@@ -23,7 +23,7 @@ function handleClick() {
   width: 44px;
   height: 44px;
   background-color: $btn-bg-color;
-  margin: 8px 28px 8px 28px;
+  border: none;
   cursor: pointer;
   transition: .3s ease-in-out;
 

@@ -1,5 +1,8 @@
 <template>
-  <button :class="$style.root" @click="handleClick">Добавить в корзину</button>
+  <button :class="$style.root"
+          @click="handleClick">
+    Добавить в корзину
+  </button>
 </template>
 
 <script lang="ts" setup>
@@ -23,7 +26,10 @@ function handleClick() {
   background-color: $btn-bg-color;
   font-size: 1.4rem;
   text-align: center;
-  margin: 8px 28px 8px 28px;
+  margin-left: 12px;
+  margin-right: 8px;
+  border: none;
+  // margin: 8px 28px 8px 28px;
   cursor: pointer;
   transition: .3s ease-in-out;
 
