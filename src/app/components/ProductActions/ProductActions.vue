@@ -1,8 +1,11 @@
 <template>
-  <div :class="$style.root"/>
+  <div :class="$style.root">
+    <BaseSelect/>
+  </div>
 </template>
 
 <script lang="ts" setup>
+import { BaseSelect } from '../BaseSelect'
 
 </script>
 

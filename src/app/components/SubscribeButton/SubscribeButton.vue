@@ -12,7 +12,7 @@
   height: 36px;
   border: 1px solid #333;
   background: transparent;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   text-align: center;
   margin: 8px 28px 8px 28px;
   cursor: pointer;

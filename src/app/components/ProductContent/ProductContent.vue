@@ -1,13 +1,20 @@
 <template>
   <div :class="$style.root">
-    <ProductView/>
+    <NameAndRating :title="nameAndRating.title"
+                   :vendorCode="nameAndRating.vendorСode"
+                   :reviews="nameAndRating.reviews"/>
     <ProductActions/>
+    <ProductLinks/>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { NameAndRating } from '../NameAndRating'
 import { ProductActions } from '../ProductActions'
-import { ProductView } from '../ProductView'
+import { ProductLinks } from '../ProductLinks'
+import { NameAndRatingProps } from '../NameAndRating/NameAndRating.props'
+
+const nameAndRating: NameAndRatingProps = { title: 'Пижама для девочек', vendorСode: '02765/46', reviews: 14 }
 </script>
 
 <style module lang="scss">

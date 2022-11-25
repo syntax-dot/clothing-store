@@ -45,6 +45,11 @@ import { VFooter } from './components/VFooter'
 
 <style lang="scss">
 @import "../css/variables.scss";
+
+:root {
+  font-size: 62.5%;
+}
+
 #app,
 * {
   margin: 0;

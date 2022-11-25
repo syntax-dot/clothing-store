@@ -1,8 +1,11 @@
 <template>
-  <div :class="$style.root"/>
+  <div :class="$style.root">
+    <ProductContent/>
+  </div>
 </template>
 
 <script lang="ts" setup>
+import { ProductContent } from '../ProductContent'
 
 </script>
 

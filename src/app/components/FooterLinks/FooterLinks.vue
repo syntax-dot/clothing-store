@@ -1,13 +1,13 @@
 <template>
   <div :class="$style.root">
     <div :class="$style.buyers">
-      <h1>Покупателям</h1>
+      <h1 :class="$style.title">Покупателям</h1>
       <a v-for="buyersLink in buyersLinks">
         {{ buyersLink }}</a>
     </div>
 
     <div :class="$style.about_us">
-      <h1>О нас</h1>
+      <h1 :class="$style.title">О нас</h1>
       <a v-for="aboutLink in aboutLinks">
         {{ aboutLink }}</a>
     </div>
@@ -30,6 +30,7 @@ const aboutLinks = [
 
 <style module lang="scss">
 @import "../../../css/variables.scss";
+
 .root {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -44,8 +45,8 @@ const aboutLinks = [
   // gap: 8px;
 }
 
-h1 {
-  font-size: 1rem;
+.title {
+  font-size: 1.6rem;
   font-weight: 400;
   padding: 12px 0;
 }
@@ -53,7 +54,7 @@ h1 {
 a {
   display: block;
   margin: 8px 0;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
 }
 
 a:hover {

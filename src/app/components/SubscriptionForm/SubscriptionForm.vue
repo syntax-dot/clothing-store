@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.root">
-    <h1>Узнавайте первыми о новинках и акциях</h1>
+    <h1 :class="$style.title">Узнавайте первыми о новинках и акциях</h1>
     <BaseInput :modelValue="inputEmail"/>
     <div :class="$style.subscribe">
       <SubscribeButton/>
@@ -20,6 +20,12 @@ const inputEmail = ref('')
 .root {
   width: 100%;
   height: 100%;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 12px 0;
 }
 
 .subscribe {

@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <div :class="$style.logo">
-      <h1>LOGO</h1>
+      <h1 :class="$style.title">LOGO</h1>
     </div>
   </div>
 </template>
@@ -21,8 +21,9 @@
   text-align: center;
 }
 
-.logo > h1 {
+.title {
   color: $main-text-color;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 </style>
