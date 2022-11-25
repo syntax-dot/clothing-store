@@ -1,8 +1,13 @@
 <template>
   <div :class="$style.root">
-    <div @click="increase">+</div>
-    <div>{{ modelValue }}</div>
-    <div :class="[$style.active, {
+    <div :class="$style.increase"
+         @click="increase">
+      +
+    </div>
+    <div :class="$style.amount">
+      {{ modelValue }}
+    </div>
+    <div :class="[$style.decrease, {
            [$style.not_active]: modelValue <= 1,
          }]"
          @click="decrease">
@@ -44,12 +49,23 @@ function decrease() {
   user-select: none;
 }
 
-.root > div {
+.amount {
   font-size: 1.4rem;
-  cursor: pointer;
 }
 
 .not_active {
   color: transparent;
+}
+
+.increase,
+.decrease {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    font-weight: bold;
+    scale: 1.2;
+  }
 }
 </style>
