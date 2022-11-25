@@ -37,6 +37,7 @@ import { VFooter } from './components/VFooter'
 }
 
 .content {
+  padding-top: 24px;
   max-width: 1390px;
   margin: 0 auto;
   height: 100%;

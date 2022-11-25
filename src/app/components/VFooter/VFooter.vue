@@ -20,6 +20,7 @@ import { SubscriptionForm } from '../SubscriptionForm'
   padding-left: 240px;
   padding-right: 240px;
   padding-bottom: 70px;
+  padding-top: 130px;
 }
 
 .content {
