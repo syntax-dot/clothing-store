@@ -19,20 +19,20 @@
 <style module lang="scss">
 .root {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
 .right {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 12px;
 }
 
 .right > div {
-  height: 335px;
-  width: 335px;
+  max-height: 335px;
+  max-width: 335px;
   background-color: #333;
 }
 

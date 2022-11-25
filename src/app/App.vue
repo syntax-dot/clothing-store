@@ -1,8 +1,6 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.header">
-      <HeaderMenu/>
-    </div>
+    <HeaderMenu :class="$style.header"/>
 
     <div :class="$style.content">
       <router-view/>

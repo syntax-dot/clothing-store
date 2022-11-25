@@ -24,6 +24,7 @@
 <style module lang="scss">
 @import "../../../css/variables.scss";
 .root {
+  padding-top: 24px;
   border-top: 1px solid $line_color;
 }
 

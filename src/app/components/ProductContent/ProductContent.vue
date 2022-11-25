@@ -34,9 +34,9 @@ const price: ProductPriceProps = {
 <style module lang="scss">
 .root {
   display: grid;
-  grid-auto-flow: row;
-  width: 100%;
-  height: 100%;
+  grid-template-rows: repeat(4, max-content);
+  gap: 28px;
+  margin-top: 24px;
   margin-left: 36px;
   box-sizing: border-box;
 }
