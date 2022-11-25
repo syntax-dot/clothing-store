@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <NameAndRating :title="nameAndRating.title"
-                   :vendorCode="nameAndRating.vendorСode"
+                   :vendorCode="nameAndRating.vendorCode"
                    :reviews="nameAndRating.reviews"/>
     <ProductActions/>
     <ProductLinks/>
@@ -14,13 +14,15 @@ import { ProductActions } from '../ProductActions'
 import { ProductLinks } from '../ProductLinks'
 import { NameAndRatingProps } from '../NameAndRating/NameAndRating.props'
 
-const nameAndRating: NameAndRatingProps = { title: 'Пижама для девочек', vendorСode: '02765/46', reviews: 14 }
+const nameAndRating: NameAndRatingProps = {
+  title: 'Пижама для девочек', vendorCode: '02765/46', reviews: '14',
+}
 </script>
 
 <style module lang="scss">
 .root {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
   width: 100%;
   height: 100%;
 }

@@ -1,5 +1,5 @@
 export interface NameAndRatingProps {
   title: string
-  vendorСode: string
+  vendorCode: string
   reviews: string
 }
