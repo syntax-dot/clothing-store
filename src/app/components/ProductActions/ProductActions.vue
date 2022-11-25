@@ -6,6 +6,7 @@
       <AddToCart/>
       <AddToFavorites/>
     </div>
+    <ProductLinks/>
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import { ref } from 'vue'
 import { AddToCart } from '../AddToCart'
 import { AddToFavorites } from '../AddToFavorites'
 import { BaseSelect } from '../BaseSelect'
+import { ProductLinks } from '../ProductLinks'
 import { QuantitySelection } from '../QuantitySelection'
 
 const productQuantity = ref(1)
@@ -23,6 +25,7 @@ const productQuantity = ref(1)
 .root {
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 
 .actions {
