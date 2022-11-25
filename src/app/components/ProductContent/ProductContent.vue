@@ -17,10 +17,10 @@
 <script lang="ts" setup>
 import { NameAndRating } from '../NameAndRating'
 import { ProductActions } from '../ProductActions'
-import { ProductLinks } from '../ProductLinks'
 import { NameAndRatingProps } from '../NameAndRating/NameAndRating.props'
 import { ProductPrice } from '../ProductPrice'
 import { ProductPriceProps } from '../ProductPrice/ProductPrice.props'
+import { ProductLinks } from '../ProductLinks'
 
 const nameAndRating: NameAndRatingProps = {
   title: 'Пижама для девочек', vendorCode: '02765/46', reviews: '14',
@@ -37,5 +37,7 @@ const price: ProductPriceProps = {
   grid-auto-flow: row;
   width: 100%;
   height: 100%;
+  margin-left: 36px;
+  box-sizing: border-box;
 }
 </style>
