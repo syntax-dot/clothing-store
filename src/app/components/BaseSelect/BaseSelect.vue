@@ -95,5 +95,6 @@ function handleClick() {
 
 .root > a {
   text-decoration: underline;
+  font-size: 1.4rem;
 }
 </style>

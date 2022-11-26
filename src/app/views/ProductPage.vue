@@ -15,4 +15,9 @@ import { ProductView } from '../components/ProductView'
   height: 100%;
   width: 100%;
 }
+
+a {
+  font-size: 1.4rem;
+  margin: 8px 0;
+}
 </style>
