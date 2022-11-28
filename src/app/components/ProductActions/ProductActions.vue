@@ -9,6 +9,7 @@
 
       <AddToFavorites @added-to-favorites="handleFavorite()"/>
     </div>
+
     <a :class="$style.link"
        href="#"> Купить в 1 клик</a>
 
@@ -41,7 +42,7 @@ function handleFavorite() {
 <style module lang="scss">
 .root {
   display: grid;
-  grid-template-rows: max-content max-content;
+  grid-template-rows: 1fr 1fr;
   user-select: none;
 }
 

@@ -24,6 +24,8 @@ const selectedImage = ref(defaultMainImage)
 
 <style module lang="scss">
 .root {
+  height: 878px;
+  width: 686px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -59,5 +61,13 @@ const selectedImage = ref(defaultMainImage)
   &:hover {
     border: 1px solid rgb(0, 0, 0);
   }
+}
+
+@media screen and (max-width: 425px) {
+  .root {
+    height: 550px;
+    width: auto;
+  }
+
 }
 </style>

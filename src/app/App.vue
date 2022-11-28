@@ -41,6 +41,8 @@ import { VFooter } from './components/VFooter'
   max-width: 1390px;
   margin: 0 auto;
   height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 @media screen and (max-width: 1440px) {

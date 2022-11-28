@@ -1,7 +1,6 @@
 <template>
   <div :class="$style.root">
-    <ProductImage :class="$style.image"
-                  :imagesPaths="productImages"/>
+    <ProductImage :imagesPaths="productImages"/>
   </div>
 </template>
 
@@ -15,20 +14,5 @@ defineProps<ProductViewProps>()
 <style module lang="scss">
 .root {
 
-}
-
-.image {
-  height: 878px;
-  width: 686px;
-}
-
-@media screen and (max-width: 425px) {
-  .root {
-    grid-template-columns: 1fr;
-  }
-
-  .image {
-    width: auto;
-  }
 }
 </style>

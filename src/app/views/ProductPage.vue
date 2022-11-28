@@ -40,4 +40,11 @@ const product: Product = {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+@media screen and (max-width: 425px) {
+
+  .root {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

@@ -11,7 +11,7 @@
            @click="dropdown = !dropdown">
 
       <div v-show="dropdown"
-           :class="[$style.wrapper_select, {
+           :class="[$style.dropdown_select, {
              [$style.opacity] : dropdown
            }]">
         <div v-for="size in availableSizes"
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <a href="#"> Определить размер </a>
+    <a v-show="!dropdown" href="#"> Определить размер </a>
   </div>
 </template>
 
@@ -31,8 +31,6 @@
 import { ref } from 'vue'
 import { SizeSelectionProps, SizeSelectionEmits } from './SizeSelection.props'
 import { Size } from '../../types/product'
-
-const selectedSize = ref<Size>(Size.L)
 
 defineProps<SizeSelectionProps>()
 const emit = defineEmits<SizeSelectionEmits>()
@@ -74,6 +72,7 @@ function handleSelect(size: Size) {
 }
 
 .dropdown {
+  position: absolute;
   display: grid;
   grid-template-columns: 1fr max-content;
   box-sizing: border-box;
@@ -83,6 +82,10 @@ function handleSelect(size: Size) {
   align-items: center;
   transition: 0.3s ease-in-out;
   border: 1px solid #000;
+}
+
+.dropdown_select {
+  position: relative;
 }
 
 .options {
@@ -101,5 +104,7 @@ function handleSelect(size: Size) {
 
 .root > a {
   text-decoration: underline;
+  position: relative;
+  top: 50px;
 }
 </style>
