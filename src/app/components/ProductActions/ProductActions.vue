@@ -6,7 +6,8 @@
       <AddToCart @added-to-cart="handleCart"/>
       <AddToFavorites @added-to-favorites="handleFavorite()"/>
     </div>
-    <a href="#"> Купить в 1 клик</a>
+    <a :class="$style.link"
+       href="#"> Купить в 1 клик</a>
   </div>
 </template>
 
@@ -35,13 +36,21 @@ function handleFavorite() {
 .root {
   display: grid;
   grid-template-rows: max-content max-content;
-  gap: 40px;
-  width: 100%;
-  height: 100%;
   user-select: none;
 }
 
 .actions {
   display: flex;
+  margin-top: 40px;
+}
+
+.link {
+  text-decoration: underline;
+  transition: .2s ease-in-out;
+
+  &:hover {
+    color: #000;
+    font-weight: 500;
+  }
 }
 </style>

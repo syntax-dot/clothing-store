@@ -5,10 +5,9 @@
 
     <div :class="$style.styles">
       <div :class="$style.left_image"
-           :style="{ backgroundImage: `url(${defaultMainImage})` }">
-        <div>*</div>
-      </div>
-      <div v-for="image in paths"
+           :style="{ backgroundImage: `url(${defaultMainImage})` }"/>
+
+      <div v-for="image in presetnationImages"
            :key="image"
            :style="{ backgroundImage: `url(${image})` }"
            :class="$style.right_image"/>
@@ -20,7 +19,7 @@
 import { StylesPresentationProps } from './StylesPresentation.props'
 const props = defineProps<StylesPresentationProps>()
 
-const defaultMainImage = props?.paths.find(v => (v.includes('main'))) ?? props.paths[0]
+const defaultMainImage = props?.presetnationImages.findIndex(v => (v.includes('main'))) ?? props.presetnationImages[0]
 </script>
 
 <style module lang="scss">
@@ -52,8 +51,8 @@ const defaultMainImage = props?.paths.find(v => (v.includes('main'))) ?? props.p
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  // width: 686px;
-  // height: 686px;
+  width: 686px;
+  height: 686px;
 
   // max-width: 686px;
   // max-height: 686px;

@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <ProductView :productImages="productPaths"/>
-    <StylesPresentation :imagesForPresentation="presentationPaths"/>
+    <StylesPresentation :presetnationImages="presentationPaths"/>
   </div>
 </template>
 

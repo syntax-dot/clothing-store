@@ -59,6 +59,7 @@ defineProps<ProductPriceProps>()
 .discount {
   display: flex;
   gap: 9px;
+  margin-top: 7px;
 }
 
 .discount > div {
