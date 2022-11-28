@@ -100,6 +100,8 @@ body {
 a {
   text-decoration: none;
   color: $a-color;
+  font-size: 1.4rem;
+  margin: 8px 0;
 
   &:hover {
     color: #000;

@@ -2,8 +2,6 @@
   <div :class="$style.root">
     <ProductImage :class="$style.image"
                   :imagesPaths="productImages"/>
-    <ProductContent :nameAndRating="nameAndRating"
-                    :price="price"/>
   </div>
 </template>
 

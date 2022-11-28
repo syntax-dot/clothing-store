@@ -1,7 +1,12 @@
-import { NameAndRatingProps } from '../NameAndRating/NameAndRating.props'
-import { ProductPriceProps } from '../ProductPrice/ProductPrice.props'
+import { Sizes } from '../../types/product'
 
 export interface ProductContentProps {
-  nameAndRating: NameAndRatingProps
-  price: ProductPriceProps
+  title: string
+  vendorCode: string
+  reviews: number
+  price: number
+  oldPrice: number
+  discountPercent: number
+  stockPercent: number
+  availableSizes: Sizes[]
 }

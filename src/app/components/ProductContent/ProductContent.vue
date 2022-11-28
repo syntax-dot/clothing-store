@@ -1,15 +1,17 @@
 <template>
   <div :class="$style.root">
-    <NameAndRating :title="nameAndRating.title"
-                   :vendorCode="nameAndRating.vendorCode"
-                   :reviews="nameAndRating.reviews"/>
+    <NameAndRating :title="title"
+                   :vendorCode="vendorCode"
+                   :reviews="reviews"/>
 
-    <ProductPrice :price="price.price"
-                  :oldPrice="price.oldPrice"
-                  :discountPercent="price.discountPercent"
-                  :stockPercent="price.stockPercent"/>
+    <ProductPrice :price="price"
+                  :oldPrice="oldPrice"
+                  :discountPercent="discountPercent"
+                  :stockPercent="stockPercent"/>
 
-    <ProductActions :title="nameAndRating.title"/>
+    <ProductActions :title="title"
+                    :availableSizes="availableSizes"/>
+
     <ProductLinks/>
   </div>
 </template>

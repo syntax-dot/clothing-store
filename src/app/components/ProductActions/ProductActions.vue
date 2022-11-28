@@ -3,11 +3,15 @@
     <BaseSelect/>
     <div :class="$style.actions">
       <QuantitySelection v-model="productQuantity"/>
+
       <AddToCart @added-to-cart="handleCart"/>
+
       <AddToFavorites @added-to-favorites="handleFavorite()"/>
     </div>
     <a :class="$style.link"
        href="#"> Купить в 1 клик</a>
+
+    <PopUp/>
   </div>
 </template>
 
@@ -16,6 +20,7 @@ import { ref } from 'vue'
 import { AddToCart } from '../AddToCart'
 import { AddToFavorites } from '../AddToFavorites'
 import { BaseSelect } from '../BaseSelect'
+import { PopUp } from '../PopUp'
 import { QuantitySelection } from '../QuantitySelection'
 import { ProductActionsProps } from './ProductActions.props'
 
@@ -51,7 +56,6 @@ function handleFavorite() {
 
   &:hover {
     color: #000;
-    font-weight: 500;
   }
 }
 </style>
