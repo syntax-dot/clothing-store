@@ -17,18 +17,11 @@
 <script lang="ts" setup>
 import { NameAndRating } from '../NameAndRating'
 import { ProductActions } from '../ProductActions'
-import { NameAndRatingProps } from '../NameAndRating/NameAndRating.props'
 import { ProductPrice } from '../ProductPrice'
-import { ProductPriceProps } from '../ProductPrice/ProductPrice.props'
 import { ProductLinks } from '../ProductLinks'
+import { ProductContentProps } from './ProductContent.props'
 
-const nameAndRating: NameAndRatingProps = {
-  title: 'Пижама для девочек', vendorCode: '02765/46', reviews: '14',
-}
-
-const price: ProductPriceProps = {
-  price: 800, oldPrice: 1500, discountPercent: 36, stockPercent: 20,
-}
+defineProps<ProductContentProps>()
 </script>
 
 <style module lang="scss">

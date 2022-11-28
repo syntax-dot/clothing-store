@@ -1,7 +1,6 @@
 <template>
   <div :class="$style.root">
-    <ImageSelect :class="$style.select"/>
-
+    <ImageSelect :imagesPaths="props.imagesPaths"/>
     <!-- <img :class="$style.image"
          src="./Pajamas_1.jpg"
          alt="PyjamasForGirls"> -->
@@ -10,7 +9,9 @@
 
 <script lang="ts" setup>
 import { ImageSelect } from '../ImageSelect'
+import { ProductImageProps } from './ProductImage.props'
 
+const props = defineProps<ProductImageProps>()
 </script>
 
 <style module lang="scss">

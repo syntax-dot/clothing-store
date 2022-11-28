@@ -1,7 +1,7 @@
 export interface ImageSelectProps {
-  productUrl: string
+  imagesPaths: string[]
 }
 
 export interface ImageSelectEmits {
-  (emit: 'update', imageUrl: string): void
+  (emit: 'select', imageUrl: string): void
 }

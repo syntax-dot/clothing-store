@@ -1,6 +1,7 @@
 <template>
   <div :class="$style.root">
-    <ProductView/>
+    <ProductView :productImages="product"
+                 :imagesForPresentation="presentation"/>
     <ImagePresentation/>
   </div>
 </template>
@@ -8,6 +9,10 @@
 <script lang="ts" setup>
 import { ImagePresentation } from '../components/ImagePresentation'
 import { ProductView } from '../components/ProductView'
+import { imagesPaths } from '../components/ProductView/ImagesPath'
+
+const product = imagesPaths.PyjamasForGirls
+const presentation = imagesPaths.StylesImages
 </script>
 
 <style module lang="scss">

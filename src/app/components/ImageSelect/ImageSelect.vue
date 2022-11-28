@@ -1,37 +1,39 @@
 <template>
   <div :class="$style.root">
-    <div v-for="image in productImages"/>
-    <div :class="$style.image"/>
-    <div :class="$style.image"/>
-    <div :class="$style.image"/>
-    <div :class="$style.image"/>
-    <div :class="$style.image"/>
+    <div v-for="image in imagesPaths"
+         :key="image"
+         :class="$style.image"
+         :style="{ backgroundImage: `url(${image})` }"
+         @click="selectedImage = image"/>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ImageSelectProps, ImageSelectEmits } from './ImageSelect.props'
+import { ref, watch } from 'vue'
+
+const selectedImage = ref('')
 
 const props = defineProps<ImageSelectProps>()
 
-const images = import.meta.glob('../../../assets/products/**/*', { eager: true })
+watch(selectedImage, () => {
+  console.log(selectedImage.value)
+})
 
-// получение пути и резолва
-const allImagesPaths: [string, string][] = Object.entries(images).map(v => [prepareKey(v[0]), v[1].default])
-console.log(allImagesPaths)
+const emit = defineEmits<ImageSelectEmits>()
 
-const imagesPath = allImagesPaths.filter(v => v[0].split('/'))
-console.log(imagesPath)
+function handleClick(event: Event): void {
+  if (!(event.target instanceof HTMLElement))
+    return
 
-function prepareKey(key: string): string {
-  return key.split('/').slice(-2).join('/')
+  console.log(selectedImage.value)
+
+  return emit('select', event.target.value)
 }
 
-// const emit = defineEmits<ImageSelectEmits>()
-
-// const productImages = `../../../assets/products/${props.productUrl}/`
-
-// const productImages = `../../../assets/products/${props.productUrl}/`
+// function handleClick() {
+//   emit('select', (event.target as HTMLInputElement).value)
+// }
 </script>
 
 <style module lang="scss">
@@ -42,13 +44,23 @@ function prepareKey(key: string): string {
   gap: 7px;
   margin-left: 24px;
   margin-top: 26px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .image {
   height: 90px;
   width: 70px;
+  box-sizing: border-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgba(0, 17, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0);
   transition: 0.3s ease-in-out;
 
   &:hover {
