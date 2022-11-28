@@ -13,6 +13,7 @@ export interface Product {
   title: string
   vendorCode: string
   reviews: number
+  rating: number
   price: number
   availableSizes: Sizes[]
   oldPrice: number

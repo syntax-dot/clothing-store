@@ -2,7 +2,8 @@
   <div :class="$style.root">
     <NameAndRating :title="title"
                    :vendorCode="vendorCode"
-                   :reviews="reviews"/>
+                   :reviews="reviews"
+                   :rating="rating"/>
 
     <ProductPrice :price="price"
                   :oldPrice="oldPrice"

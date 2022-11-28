@@ -4,9 +4,9 @@
     <h2 :class="$style.vendor_code"> {{ 'Арт. ' + vendorCode }}</h2>
     <div :class="$style.rating">
       Отзывы
-      <RatingStars :rating="stars"/>
+      <RatingStars :rating="rating"/>
       {{ reviews }} Отзывов
-      <img :class="$style.arrow_left" src="./arrowLeft.svg">
+      <img :class="$style.arrow_left" src="../../../assets/icons/arrowLeft.svg">
     </div>
   </div>
 </template>
@@ -16,8 +16,6 @@ import { RatingStars } from '../RatingStars'
 import { NameAndRatingProps } from './NameAndRating.props'
 
 defineProps<NameAndRatingProps>()
-
-const stars = 4
 </script>
 
 <style module lang="scss">

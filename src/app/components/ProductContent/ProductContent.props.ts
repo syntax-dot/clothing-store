@@ -4,6 +4,7 @@ export interface ProductContentProps {
   title: string
   vendorCode: string
   reviews: number
+  rating: number
   price: number
   oldPrice: number
   discountPercent: number

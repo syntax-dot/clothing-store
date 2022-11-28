@@ -6,6 +6,7 @@
 
     <div>
       <ProductContent :nameAndRating="pyjamasForGirls.title"
+                      :rating="pyjamasForGirls.rating"
                       :price="pyjamasForGirls.price"
                       :title="pyjamasForGirls.title"
                       :vendorCode="pyjamasForGirls.vendorCode"
@@ -35,6 +36,7 @@ const pyjamasForGirls: Product = {
   title: 'Пижама для девочек',
   vendorCode: '02765/46',
   reviews: 14,
+  rating: 4,
   price: 800,
   availableSizes: [Sizes.L, Sizes.S, Sizes.M, Sizes.XL],
   oldPrice: 1500,
