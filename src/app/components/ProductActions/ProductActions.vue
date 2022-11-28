@@ -47,6 +47,7 @@ function handleFavorite() {
 .link {
   text-decoration: underline;
   transition: .2s ease-in-out;
+  width: fit-content;
 
   &:hover {
     color: #000;
