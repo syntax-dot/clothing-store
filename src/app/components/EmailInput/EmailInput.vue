@@ -1,29 +1,42 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.input_form">
+    <div :class="[$style.input_form, {
+      [$style.error]: isEmailError
+    }]">
       <input :class="$style.input"
              type="email"
              placeholder="Адрес электронной почты"
-             :value="modelValue">
-      <div :class="$style.clear">
-        <svg width="16"
-             height="16"
-             viewBox="0 0 16 16"
-             fill="none"
-             xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.70001 12.0664L12.0501 3.88337" stroke="#C4C4C4"/>
-          <path d="M12.2516 12.0664L3.90161 3.88335" stroke="#C4C4C4"/>
-        </svg>
+             :value="modelValue"
+             @input="handleInput">
+
+      <div :class="$style.clear"
+           @click="handleClear">
+        <img src="../../../assets/icons/close.svg" alt="clear">
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { EmailInputProps, EmailInputEmits } from './EmailInput.props'
 
-defineProps<EmailInputProps>()
-defineEmits<EmailInputEmits>()
+const props = defineProps<EmailInputProps>()
+const emit = defineEmits<EmailInputEmits>()
+
+const isEmailError = ref(true)
+
+function handleInput(event: Event): void {
+  if (!(event.target instanceof HTMLElement))
+    return
+
+  return emit('update:modelValue', (event.target as HTMLInputElement).value)
+}
+
+function handleClear() {
+  emit('clear')
+  console.log('clear')
+}
 </script>
 
 <style module lang="scss">
@@ -54,6 +67,10 @@ defineEmits<EmailInputEmits>()
   background: transparent;
   outline: none;
   border: none;
+}
+
+.error {
+  border-bottom: 1px solid rgb(255, 0, 0);
 }
 
 .clear {

@@ -1,9 +1,13 @@
 <template>
   <div :class="$style.root">
     <h1 :class="$style.title">Узнавайте первыми о новинках и акциях</h1>
-    <EmailInput :modelValue="inputEmail"/>
+    <EmailInput :modelValue="inputEmail"
+                @clear="handleClear"
+                @emailVerified="emailVerified = true"/>
+
     <div :class="$style.subscribe">
-      <SubscribeButton/>
+      <SubscribeButton :class="{ [$style.not_verified]: !emailVerified }"
+                       @click="handleSubscribe"/>
     </div>
   </div>
 </template>
@@ -14,6 +18,15 @@ import { EmailInput } from '../EmailInput'
 import { SubscribeButton } from '../SubscribeButton'
 
 const inputEmail = ref('')
+const emailVerified = ref(false)
+
+function handleClear() {
+  inputEmail.value = ''
+}
+
+function handleSubscribe() {
+  console.log(`${inputEmail.value} подписался на обновления`)
+}
 </script>
 
 <style module lang="scss">
@@ -30,6 +43,11 @@ const inputEmail = ref('')
 
 .subscribe {
   width: 100%;
-  text-align: end;
+  text-align: right;
+}
+
+.not_verified {
+  color: rgb(235, 235, 235);
+  border: 1px solid rgb(235, 235, 235);
 }
 </style>
