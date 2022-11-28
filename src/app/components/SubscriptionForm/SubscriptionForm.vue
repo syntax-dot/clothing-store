@@ -1,12 +1,12 @@
 <template>
   <div :class="$style.root">
     <h1 :class="$style.title">Узнавайте первыми о новинках и акциях</h1>
-    <EmailInput :modelValue="inputEmail"
+    <EmailInput v-model="inputEmail"
                 @clear="handleClear"
                 @emailVerified="emailVerified = true"/>
 
     <div :class="$style.subscribe">
-      <SubscribeButton :class="{ [$style.not_verified]: !emailVerified }"
+      <SubscribeButton :verified="emailVerified"
                        @click="handleSubscribe"/>
     </div>
   </div>

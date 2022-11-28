@@ -7,7 +7,7 @@
              type="email"
              placeholder="Адрес электронной почты"
              :value="modelValue"
-             @input="handleInput">
+             @input.stop="handleInput">
 
       <div :class="$style.clear"
            @click="handleClear">
@@ -76,6 +76,7 @@ function handleClear() {
 .clear {
   height: 16px;
   cursor: pointer;
+  user-select: none;
 
   &:hover > svg {
     stroke: #000;

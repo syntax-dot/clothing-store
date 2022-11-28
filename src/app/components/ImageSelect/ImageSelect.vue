@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.root">
-    <!-- <div v-for="image in productImages"/> -->
+    <div v-for="image in productImages"/>
     <div :class="$style.image"/>
     <div :class="$style.image"/>
     <div :class="$style.image"/>
@@ -13,6 +13,20 @@
 import { ImageSelectProps, ImageSelectEmits } from './ImageSelect.props'
 
 const props = defineProps<ImageSelectProps>()
+
+const images = import.meta.glob('../../../assets/products/**/*', { eager: true })
+
+// получение пути и резолва
+const allImagesPaths: [string, string][] = Object.entries(images).map(v => [prepareKey(v[0]), v[1].default])
+console.log(allImagesPaths)
+
+const imagesPath = allImagesPaths.filter(v => v[0].split('/'))
+console.log(imagesPath)
+
+function prepareKey(key: string): string {
+  return key.split('/').slice(-2).join('/')
+}
+
 // const emit = defineEmits<ImageSelectEmits>()
 
 // const productImages = `../../../assets/products/${props.productUrl}/`
