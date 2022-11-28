@@ -14,7 +14,7 @@ import { ref, watch } from 'vue'
 
 const selectedImage = ref('')
 
-const props = defineProps<ImageSelectProps>()
+defineProps<ImageSelectProps>()
 
 watch(selectedImage, () => {
   console.log(selectedImage.value)
