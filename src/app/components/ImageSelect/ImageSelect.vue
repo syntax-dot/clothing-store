@@ -1,6 +1,11 @@
 <template>
   <div :class="$style.root">
-    <div v-for="image in images"/>
+    <!-- <div v-for="image in images"/> -->
+    <div :class="$style.image"/>
+    <div :class="$style.image"/>
+    <div :class="$style.image"/>
+    <div :class="$style.image"/>
+    <div :class="$style.image"/>
   </div>
 </template>
 
@@ -10,6 +15,17 @@
 
 <style module lang="scss">
 .root {
+  position: absolute;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 7px;
+  margin-left: 24px;
+  margin-top: 26px;
+}
 
+.image {
+  height: 90px;
+  width: 70px;
+  background-color: #000;
 }
 </style>
