@@ -2,7 +2,7 @@
   <div :class="$style.root">
     <div :class="$style.input_form">
       <input :class="$style.input"
-             type="text"
+             type="email"
              placeholder="Адрес электронной почты"
              :value="modelValue">
       <div :class="$style.clear">
@@ -20,10 +20,10 @@
 </template>
 
 <script lang="ts" setup>
-import { BaseInputProps, BaseInputEmits } from './BaseInput.props'
+import { EmailInputProps, EmailInputEmits } from './EmailInput.props'
 
-defineProps<BaseInputProps>()
-defineEmits<BaseInputEmits>()
+defineProps<EmailInputProps>()
+defineEmits<EmailInputEmits>()
 </script>
 
 <style module lang="scss">

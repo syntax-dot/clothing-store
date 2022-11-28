@@ -3,8 +3,8 @@
     <BaseSelect/>
     <div :class="$style.actions">
       <QuantitySelection v-model="productQuantity"/>
-      <AddToCart/>
-      <AddToFavorites/>
+      <AddToCart @added-to-cart="handleCart"/>
+      <AddToFavorites @added-to-favorites="handleFavorite()"/>
     </div>
   </div>
 </template>
@@ -15,8 +15,19 @@ import { AddToCart } from '../AddToCart'
 import { AddToFavorites } from '../AddToFavorites'
 import { BaseSelect } from '../BaseSelect'
 import { QuantitySelection } from '../QuantitySelection'
+import { ProductActionsProps } from './ProductActions.props'
+
+const props = defineProps<ProductActionsProps>()
 
 const productQuantity = ref(1)
+
+function handleCart() {
+  console.log(`Товар '${props.title}' добавлен в корзину в кол-ве: ${productQuantity.value} ед.`)
+}
+
+function handleFavorite() {
+  console.log(`Товар '${props.title}' добавлен в избранное`)
+}
 </script>
 
 <style module lang="scss">

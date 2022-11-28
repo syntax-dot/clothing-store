@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <h1 :class="$style.title">Узнавайте первыми о новинках и акциях</h1>
-    <BaseInput :modelValue="inputEmail"/>
+    <EmailInput :modelValue="inputEmail"/>
     <div :class="$style.subscribe">
       <SubscribeButton/>
     </div>
@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { BaseInput } from '../BaseInput'
+import { EmailInput } from '../EmailInput'
 import { SubscribeButton } from '../SubscribeButton'
 
 const inputEmail = ref('')

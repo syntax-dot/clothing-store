@@ -1,6 +1,6 @@
-export interface BaseInputProps {
+export interface EmailInputProps {
   modelValue: string
 }
-export interface BaseInputEmits {
+export interface EmailInputEmits {
   (event: 'update:modelValue', value: string): void
 }

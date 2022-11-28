@@ -9,7 +9,7 @@
                   :discountPercent="price.discountPercent"
                   :stockPercent="price.stockPercent"/>
 
-    <ProductActions/>
+    <ProductActions :title="nameAndRating.title"/>
     <ProductLinks/>
   </div>
 </template>

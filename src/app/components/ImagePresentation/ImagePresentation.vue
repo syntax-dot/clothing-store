@@ -62,7 +62,7 @@
 }
 
 .right > div {
-  max-height: 335px;
+  // max-height: 335px;
   background-color: #333;
 }
 
