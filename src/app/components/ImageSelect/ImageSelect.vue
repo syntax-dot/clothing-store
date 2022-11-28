@@ -4,7 +4,7 @@
          :key="image"
          :class="$style.image"
          :style="{ backgroundImage: `url(${image})` }"
-         @click="selectedImage = image"/>
+         @click="handleClick"/>
   </div>
 </template>
 
@@ -26,14 +26,10 @@ function handleClick(event: Event): void {
   if (!(event.target instanceof HTMLElement))
     return
 
-  console.log(selectedImage.value)
+  console.log((event.target as HTMLInputElement).value)
 
-  return emit('select', event.target.value)
+  return emit('select', (event.target as HTMLInputElement).value)
 }
-
-// function handleClick() {
-//   emit('select', (event.target as HTMLInputElement).value)
-// }
 </script>
 
 <style module lang="scss">
@@ -56,7 +52,7 @@ function handleClick(event: Event): void {
   height: 90px;
   width: 70px;
   box-sizing: border-box;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgb(255, 255, 255);

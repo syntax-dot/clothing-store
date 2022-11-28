@@ -18,7 +18,9 @@
 </template>
 
 <script lang="ts" setup>
+import { ImagePresentationProps } from './ImagePresentation.props'
 
+defineProps<ImagePresentationProps>()
 </script>
 
 <style module lang="scss">
