@@ -4,5 +4,4 @@ export interface EmailInputProps {
 export interface EmailInputEmits {
   (event: 'update:modelValue', value: string): void
   (event: 'clear'): void
-  (event: 'emailVerified'): void
 }

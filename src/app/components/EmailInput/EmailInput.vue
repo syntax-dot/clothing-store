@@ -1,8 +1,6 @@
 <template>
   <div :class="$style.root">
-    <div :class="[$style.input_form, {
-      [$style.error]: isEmailError
-    }]">
+    <div :class="$style.input_form">
       <input :class="$style.input"
              type="email"
              placeholder="Адрес электронной почты"
@@ -10,7 +8,7 @@
              @input.stop="handleInput">
 
       <div :class="$style.clear"
-           @click="handleClear">
+           @click="$emit('clear')">
         <img src="../../../assets/icons/close.svg" alt="clear">
       </div>
     </div>
@@ -18,13 +16,11 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { EmailInputProps, EmailInputEmits } from './EmailInput.props'
 
-const props = defineProps<EmailInputProps>()
-const emit = defineEmits<EmailInputEmits>()
+defineProps<EmailInputProps>()
 
-const isEmailError = ref(true)
+const emit = defineEmits<EmailInputEmits>()
 
 function handleInput(event: Event): void {
   if (!(event.target instanceof HTMLElement))
@@ -32,20 +28,11 @@ function handleInput(event: Event): void {
 
   return emit('update:modelValue', (event.target as HTMLInputElement).value)
 }
-
-function handleClear() {
-  emit('clear')
-  console.log('clear')
-}
 </script>
 
 <style module lang="scss">
 .root {
-
   box-sizing: border-box;
-  // width: 100%;
-  // height: 100%;
-
   padding-top: 16px;
   padding-bottom: 24px;
 }
@@ -67,6 +54,11 @@ function handleClear() {
   background: transparent;
   outline: none;
   border: none;
+  min-width: 300px;
+
+  &:focus + .input_form {
+    border-bottom: 1px solid #000;
+  }
 }
 
 .error {
@@ -78,8 +70,8 @@ function handleClear() {
   cursor: pointer;
   user-select: none;
 
-  &:hover > svg {
-    stroke: #000;
+  &:hover {
+    scale: 1.2;
   }
 }
 </style>
