@@ -4,23 +4,24 @@
        href="#"> Просмотреть все стили</a>
 
     <div :class="$style.styles">
-      <div :class="$style.left">
+      <div :class="$style.left_image"
+           :style="{ backgroundImage: `url(${defaultMainImage})` }">
         <div>*</div>
       </div>
-      <div :class="$style.right">
-        <div>*</div>
-        <div>*</div>
-        <div>*</div>
-        <div>*</div>
-      </div>
+      <div v-for="image in paths"
+           :key="image"
+           :style="{ backgroundImage: `url(${image})` }"
+           :class="$style.right_image"/>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ImagePresentationProps } from './ImagePresentation.props'
+import { ImagePresentationProps } from './StylesPresentation.props'
 
-defineProps<ImagePresentationProps>()
+const props = defineProps<ImagePresentationProps>()
+
+const defaultMainImage = props?.paths.find(v => (v.includes('main'))) ?? props.paths[0]
 </script>
 
 <style module lang="scss">
@@ -46,17 +47,22 @@ defineProps<ImagePresentationProps>()
   margin-top: 24px;
 }
 
-.left {
-  width: 686px;
-  height: 686px;
+.left_image,
+.right_image {
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // width: 686px;
+  // height: 686px;
 
   // max-width: 686px;
   // max-height: 686px;
 
-  background-color: rgb(138, 138, 138);
+  // background-color: rgb(138, 138, 138);
 }
 
-.right {
+.right_image {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -65,7 +71,7 @@ defineProps<ImagePresentationProps>()
 
 .right > div {
   // max-height: 335px;
-  background-color: #333;
+  // background-color: #333;
 }
 
 @media screen and (max-width: 768px) {

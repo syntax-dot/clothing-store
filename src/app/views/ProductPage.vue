@@ -1,18 +1,17 @@
 <template>
   <div :class="$style.root">
-    <ProductView :productImages="product"/>
-    <ImagePresentation :imagesForPresentation="presentation"/>
+    <ProductView :productImages="productPaths"/>
+    <StylesPresentation :imagesForPresentation="presentationPaths"/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ImagePresentation } from '../components/ImagePresentation'
 import { ProductView } from '../components/ProductView'
 import { imagesPaths } from '../components/ProductView/ImagesPath'
-import { ImagePresentationProps } from '../components/ImagePresentation/ImagePresentation.props'
+import { StylesPresentation } from '../components/StylesPresentation'
 
-const product = imagesPaths.PyjamasForGirls
-const presentation = imagesPaths.StylesImages
+const productPaths = imagesPaths.PyjamasForGirls
+const presentationPaths = imagesPaths.StylesImages
 </script>
 
 <style module lang="scss">

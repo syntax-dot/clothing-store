@@ -37,6 +37,7 @@ function handleClick(event: Event): void {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: 0.3s ease-in-out;
 }
 
 .select {
