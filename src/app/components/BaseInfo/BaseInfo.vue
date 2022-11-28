@@ -1,11 +1,12 @@
 <template>
   <div :class="$style.root">
-    <h2 :class="$style.title"> {{ title }}</h2>
-    <h2 :class="$style.vendor_code"> {{ 'Арт. ' + vendorCode }}</h2>
+    <h2 :class="$style.title"> {{ content.title }}</h2>
+    <h2 :class="$style.vendor_code"> {{ 'Арт. ' + content.vendorCode }}</h2>
     <div :class="$style.rating">
       Отзывы
-      <RatingStars :rating="rating"/>
-      {{ reviews }} Отзывов
+      <RatingStars :rating="content.rating"/>
+
+      {{ content.reviews }} Отзывов
       <img :class="$style.arrow_left" src="../../../assets/icons/arrowLeft.svg">
     </div>
   </div>
@@ -13,16 +14,16 @@
 
 <script lang="ts" setup>
 import { RatingStars } from '../RatingStars'
-import { NameAndRatingProps } from './NameAndRating.props'
+import { BaseInfoProps } from './BaseInfo.props'
 
-defineProps<NameAndRatingProps>()
+defineProps<BaseInfoProps>()
 </script>
 
 <style module lang="scss">
 @import "../../../css/variables.scss";
 .root {
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
 }
 
 .title {

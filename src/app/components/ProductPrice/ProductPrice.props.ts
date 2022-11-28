@@ -1,6 +1,4 @@
+import { WithPrice } from '../../types/product'
 export interface ProductPriceProps {
-  price: number
-  oldPrice?: number
-  discountPercent?: number
-  stockPercent?: number
+  content: WithPrice
 }

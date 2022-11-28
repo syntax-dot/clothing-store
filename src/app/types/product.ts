@@ -8,18 +8,25 @@ export enum Size {
   XXL = 46
 }
 
-export interface Product {
-  id: number
-  title: string
-  vendorCode: string
-  reviews: number
-  rating: number
+export interface WithPrice {
   price: number
-  availableSizes: Size[]
   oldPrice: number
   discountPercent: number
   stockPercent: number
-  images: string[] | string
+}
+
+export interface BaseInfo {
+  title: string
+  reviews: number
+  rating: number
+  vendorCode: string
+}
+
+export interface Product extends WithPrice, BaseInfo {
+  id: number
+  availableSizes: Size[]
+  selectedSize?: Size
+  images: string[]
   inTheCart: boolean
   inTheFavorite: boolean
 }

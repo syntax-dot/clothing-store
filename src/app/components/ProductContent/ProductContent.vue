@@ -1,24 +1,18 @@
 <template>
   <div :class="$style.root">
-    <NameAndRating :title="title"
-                   :vendorCode="vendorCode"
-                   :reviews="reviews"
-                   :rating="rating"/>
+    <NameAndRating :content="content"/>
 
-    <ProductPrice :price="price"
-                  :oldPrice="oldPrice"
-                  :discountPercent="discountPercent"
-                  :stockPercent="stockPercent"/>
+    <ProductPrice :content="content"/>
 
-    <ProductActions :title="title"
-                    :availableSizes="availableSizes"/>
+    <ProductActions :title="content.title"
+                    :availableSizes="content.availableSizes"/>
 
     <ProductLinks/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { NameAndRating } from '../NameAndRating'
+import { NameAndRating } from '../BaseInfo'
 import { ProductActions } from '../ProductActions'
 import { ProductPrice } from '../ProductPrice'
 import { ProductLinks } from '../ProductLinks'

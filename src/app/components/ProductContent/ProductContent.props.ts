@@ -1,13 +1,5 @@
-import Sizes from '../../types/product'
+import { Product } from '../../types/product'
 
 export interface ProductContentProps {
-  title: string
-  vendorCode: string
-  reviews: number
-  rating: number
-  price: number
-  oldPrice: number
-  discountPercent: number
-  stockPercent: number
-  availableSizes: Sizes[]
+  content: Product
 }

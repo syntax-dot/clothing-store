@@ -1,17 +1,8 @@
 <template>
   <div :class="$style.root">
-    <ProductView :productImages="productPaths"/>
+    <ProductView :productImages="product.images"/>
 
-    <ProductContent :nameAndRating="pyjamasForGirls.title"
-                    :rating="pyjamasForGirls.rating"
-                    :price="pyjamasForGirls.price"
-                    :title="pyjamasForGirls.title"
-                    :vendorCode="pyjamasForGirls.vendorCode"
-                    :discountPercent="pyjamasForGirls.discountPercent"
-                    :stockPercent="pyjamasForGirls.stockPercent"
-                    :oldPrice="pyjamasForGirls.oldPrice"
-                    :reviews="pyjamasForGirls.reviews"
-                    :availableSizes="pyjamasForGirls.availableSizes"/>
+    <ProductContent :content="product"/>
 
     <!-- <StylesPresentation :presetnationImages="presentationPaths"/> -->
   </div>
@@ -24,10 +15,10 @@ import { imagesPaths } from '../components/ProductView/ImagesPath'
 import { StylesPresentation } from '../components/StylesPresentation'
 import { Size, Product } from '../types/product'
 
-const productPaths = imagesPaths.PyjamasForGirls
+// const productPaths = imagesPaths.PyjamasForGirls
 const presentationPaths = imagesPaths.StylesImages
 
-const pyjamasForGirls: Product = {
+const product: Product = {
   id: 1,
   title: 'Пижама для девочек',
   vendorCode: '02765/46',
@@ -38,7 +29,7 @@ const pyjamasForGirls: Product = {
   oldPrice: 1500,
   discountPercent: 36,
   stockPercent: 20,
-  images: productPaths,
+  images: imagesPaths.PyjamasForGirls,
   inTheCart: false,
   inTheFavorite: false,
 }

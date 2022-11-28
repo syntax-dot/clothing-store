@@ -11,14 +11,15 @@
            @click="dropdown = !dropdown">
 
       <div v-show="dropdown"
-           :class="[$style.dropdown_content, {
+           :class="[$style.wrapper_select, {
              [$style.opacity] : dropdown
-           } ]">
-        <a v-for="size in availableSizes"
-           :key="size"
-           @click="handleSelect">
-          {{ size }}
-        </a>
+           }]">
+        <div v-for="size in availableSizes"
+             :key="size"
+             :class="$style.options"
+             @click="handleSelect(size)">
+          {{ Size[size] }} ({{ size }})
+        </div>
       </div>
     </div>
 
@@ -29,21 +30,21 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { SizeSelectionProps, SizeSelectionEmits } from './SizeSelection.props'
+import { Size } from '../../types/product'
+
+const selectedSize = ref<Size>(Size.L)
 
 defineProps<SizeSelectionProps>()
-const event = defineEmits<SizeSelectionEmits>()
+const emit = defineEmits<SizeSelectionEmits>()
 
 const dropdown = ref(false)
 
-// function handleClick(e: Event) {
-//   if (e.target !== e.currentTarget)
-//     dropdown.value = false
+function handleSelect(size: Size) {
+  console.log(`Выбран ${size} размер`)
 
-//   dropdown.value = !dropdown.value
-// }
+  emit('select', size)
 
-function handleSelect(e: Event) {
-  event('select', e)
+  dropdown.value = false
 }
 </script>
 
@@ -77,37 +78,28 @@ function handleSelect(e: Event) {
   grid-template-columns: 1fr max-content;
   box-sizing: border-box;
   width: 315px;
-  // height: 44px;
   padding: 8px;
   justify-content: space-between;
   align-items: center;
-  // width: 100%;
   transition: 0.3s ease-in-out;
   border: 1px solid #000;
-
-  &:hover {
-    // box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.6);
-  }
 }
 
-.opacity {
-  opacity: 0.8;
-}
-
-.dropdown_content {
+.options {
   display: grid;
   grid-auto-flow: row;
-  // opacity: 0;
-  margin-left: 20px;
-  transition: opacity 0.3s;
-}
-.dropdown_content > a:hover {
-  color: #000;
+  margin-left: 8px;
   cursor: pointer;
+  font-size: 1.4rem;
+  color: rgb(134, 134, 134);
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+  color: #000;
+}
 }
 
 .root > a {
   text-decoration: underline;
-  font-size: 1.4rem;
 }
 </style>

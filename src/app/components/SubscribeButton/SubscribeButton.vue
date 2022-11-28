@@ -11,10 +11,10 @@
 import { SubscribeButtonProps, SubscribeButtonEmits } from './SubscribeButton.props'
 
 defineProps<SubscribeButtonProps>()
-const event = defineEmits<SubscribeButtonEmits>()
+const emit = defineEmits<SubscribeButtonEmits>()
 
 function handleSubscribe(e: Event) {
-  event('subscribe')
+  emit('subscribe')
 }
 </script>
 
