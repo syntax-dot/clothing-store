@@ -45,10 +45,6 @@ import { VFooter } from './components/VFooter'
 
 @media screen and (max-width: 1440px) {
 
-  .header {
-    height: 67px;
-  }
-
   .header, .footer {
     padding-left: 140px;
     padding-right: 140px;
@@ -56,9 +52,16 @@ import { VFooter } from './components/VFooter'
 }
 
 @media screen and (max-width: 768px) {
+  .header {
+    height: 67px;
+  }
   .header, .footer {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .content {
+    padding-top: 0;
   }
 }
 

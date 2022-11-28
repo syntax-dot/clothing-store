@@ -1,8 +1,7 @@
 <template>
   <div :class="$style.root">
-    <ProductView :productImages="product"
-                 :imagesForPresentation="presentation"/>
-    <ImagePresentation/>
+    <ProductView :productImages="product"/>
+    <ImagePresentation :imagesForPresentation="presentation"/>
   </div>
 </template>
 
@@ -10,6 +9,7 @@
 import { ImagePresentation } from '../components/ImagePresentation'
 import { ProductView } from '../components/ProductView'
 import { imagesPaths } from '../components/ProductView/ImagesPath'
+import { ImagePresentationProps } from '../components/ImagePresentation/ImagePresentation.props'
 
 const product = imagesPaths.PyjamasForGirls
 const presentation = imagesPaths.StylesImages
