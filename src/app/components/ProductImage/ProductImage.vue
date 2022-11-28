@@ -2,9 +2,9 @@
   <div :class="$style.root">
     <ImageSelect :class="$style.select"/>
 
-    <img :class="$style.image"
+    <!-- <img :class="$style.image"
          src="./Pajamas_1.jpg"
-         alt="PyjamasForGirls">
+         alt="PyjamasForGirls"> -->
   </div>
 </template>
 
@@ -15,6 +15,13 @@ import { ImageSelect } from '../ImageSelect'
 
 <style module lang="scss">
 .root {
+  height: 878px;
+  width: 686px;
+
+  background-image: url("./Pajamas_1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
 }
 

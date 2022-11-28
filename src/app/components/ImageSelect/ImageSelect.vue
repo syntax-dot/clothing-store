@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.root">
-    <!-- <div v-for="image in images"/> -->
+    <!-- <div v-for="image in productImages"/> -->
     <div :class="$style.image"/>
     <div :class="$style.image"/>
     <div :class="$style.image"/>
@@ -10,7 +10,14 @@
 </template>
 
 <script lang="ts" setup>
+import { ImageSelectProps, ImageSelectEmits } from './ImageSelect.props'
 
+const props = defineProps<ImageSelectProps>()
+// const emit = defineEmits<ImageSelectEmits>()
+
+// const productImages = `../../../assets/products/${props.productUrl}/`
+
+// const productImages = `../../../assets/products/${props.productUrl}/`
 </script>
 
 <style module lang="scss">
@@ -26,6 +33,12 @@
 .image {
   height: 90px;
   width: 70px;
-  background-color: #000;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 17, 255, 0);
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    border: 1px solid rgb(0, 0, 0);
+  }
 }
 </style>

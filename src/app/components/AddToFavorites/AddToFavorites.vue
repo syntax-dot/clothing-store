@@ -1,7 +1,9 @@
 <template>
   <button :class="$style.root"
           @click="handleClick">
-    <img src="./favorite.svg" alt="favorite">
+    <img :class="$style.image"
+         src="./favorite.svg"
+         alt="favorite">
   </button>
 </template>
 
@@ -32,6 +34,11 @@ function handleClick() {
     background-color: rgb(194, 0, 0);
     // border: 1px solid rgb(255, 0, 0);
     scale: 1.1;
+  }
+
+  &:hover > img {
+    content: url('../../../assets/icons/favoriteFull.svg');
+
   }
 }
 </style>
