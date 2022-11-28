@@ -1,11 +1,6 @@
 <template>
   <div :class="$style.root"
        :style="{ backgroundImage: `url(${selectedImage})` }">
-    <!-- <ImageSelect :imagesPaths="props.imagesPaths"/> -->
-    <!-- <img :class="$style.image"
-         src="./Pajamas_1.jpg"
-         alt="PyjamasForGirls"> -->
-
     <div :class="$style.select">
       <div v-for="image in imagesPaths"
            :key="image"
@@ -18,7 +13,6 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ImageSelect } from '../ImageSelect'
 import { ProductImageProps } from './ProductImage.props'
 
 const props = defineProps<ProductImageProps>()
@@ -26,10 +20,6 @@ const props = defineProps<ProductImageProps>()
 const defaultMainImage = props.imagesPaths.find(v => (v.includes('main'))) ?? props.imagesPaths[0]
 
 const selectedImage = ref(defaultMainImage)
-
-function handleClick(event: Event): void {
-  selectedImage.value
-}
 </script>
 
 <style module lang="scss">

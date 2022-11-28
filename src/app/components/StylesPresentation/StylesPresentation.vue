@@ -17,9 +17,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ImagePresentationProps } from './StylesPresentation.props'
-
-const props = defineProps<ImagePresentationProps>()
+import { StylesPresentationProps } from './StylesPresentation.props'
+const props = defineProps<StylesPresentationProps>()
 
 const defaultMainImage = props?.paths.find(v => (v.includes('main'))) ?? props.paths[0]
 </script>
