@@ -2,23 +2,23 @@
   <div :class="$style.root">
     <div :class="$style.price">
       <h1>
-        {{ price + ' ₽' }}
+        {{ content.price + ' ₽' }}
       </h1>
 
-      <del v-show="oldPrice"
+      <del v-show="content.oldPrice"
            :class="$style.old_price">
-        {{ oldPrice }}
+        {{ content.oldPrice }}
       </del>
 
       <img src="../../../assets/icons/arrowLeft.svg" alt="">
     </div>
 
     <div :class="$style.discount">
-      <div v-show="discountPercent">
-        <span>{{ 'скидка -' + discountPercent + '%' }}</span>
+      <div v-show="content.discountPercent">
+        <span>{{ 'скидка -' + content.discountPercent + '%' }}</span>
       </div>
-      <div v-show="stockPercent">
-        <span>{{ 'акция -' + stockPercent + '%' }}</span>
+      <div v-show="content.stockPercent">
+        <span>{{ 'акция -' + content.stockPercent + '%' }}</span>
       </div>
     </div>
   </div>

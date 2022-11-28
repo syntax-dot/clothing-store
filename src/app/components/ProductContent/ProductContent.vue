@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.root">
-    <NameAndRating :content="content"/>
+    <BaseProductInfo :content="content"/>
 
     <ProductPrice :content="content"/>
 
@@ -12,11 +12,11 @@
 </template>
 
 <script lang="ts" setup>
-import { NameAndRating } from '../BaseInfo'
 import { ProductActions } from '../ProductActions'
 import { ProductPrice } from '../ProductPrice'
 import { ProductLinks } from '../ProductLinks'
 import { ProductContentProps } from './ProductContent.props'
+import { BaseProductInfo } from '../BaseProductInfo'
 
 defineProps<ProductContentProps>()
 </script>

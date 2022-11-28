@@ -1,4 +1,5 @@
 import { BaseInfo } from '../../types/product'
-export interface BaseInfoProps {
+
+export interface BaseProductInfoProps {
   content: BaseInfo
 }

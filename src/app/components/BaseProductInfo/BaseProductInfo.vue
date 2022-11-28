@@ -14,13 +14,14 @@
 
 <script lang="ts" setup>
 import { RatingStars } from '../RatingStars'
-import { BaseInfoProps } from './BaseInfo.props'
+import { BaseProductInfoProps } from './BaseProductInfo.props'
 
-defineProps<BaseInfoProps>()
+defineProps<BaseProductInfoProps>()
 </script>
 
 <style module lang="scss">
 @import "../../../css/variables.scss";
+
 .root {
   // width: 100%;
   // height: 100%;
