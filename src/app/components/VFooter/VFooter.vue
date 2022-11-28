@@ -17,8 +17,6 @@ import { SubscriptionForm } from '../SubscriptionForm'
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding-left: 240px;
-  padding-right: 240px;
   padding-bottom: 70px;
   padding-top: 130px;
 }
@@ -29,5 +27,23 @@ import { SubscriptionForm } from '../SubscriptionForm'
   box-sizing: border-box;
   margin-left: 143px;
   margin-right: 143px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .content {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 58px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 </style>

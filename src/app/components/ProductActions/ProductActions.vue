@@ -6,6 +6,7 @@
       <AddToCart @added-to-cart="handleCart"/>
       <AddToFavorites @added-to-favorites="handleFavorite()"/>
     </div>
+    <a href="#"> Купить в 1 клик</a>
   </div>
 </template>
 

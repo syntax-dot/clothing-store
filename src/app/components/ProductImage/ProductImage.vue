@@ -16,14 +16,10 @@ const props = defineProps<ProductImageProps>()
 
 <style module lang="scss">
 .root {
-  height: 878px;
-  width: 686px;
-
   background-image: url("./Pajamas_1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 }
 
 .image {

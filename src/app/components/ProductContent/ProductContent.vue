@@ -33,4 +33,10 @@ defineProps<ProductContentProps>()
   margin-left: 36px;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 768px) {
+  .root {
+    margin-left: 20px;
+  }
+}
 </style>

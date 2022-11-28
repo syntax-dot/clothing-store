@@ -1,6 +1,7 @@
 <template>
   <div :class="$style.root">
-    <ProductImage :imagesPaths="productImages"/>
+    <ProductImage :class="$style.image"
+                  :imagesPaths="productImages"/>
     <ProductContent :nameAndRating="nameAndRating"
                     :price="price"/>
   </div>
@@ -28,5 +29,20 @@ const price: ProductPriceProps = {
 .root {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.image {
+  height: 878px;
+  width: 686px;
+}
+
+@media screen and (max-width: 425px) {
+  .root {
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    width: auto;
+  }
 }
 </style>

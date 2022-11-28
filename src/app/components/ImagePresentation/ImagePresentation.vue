@@ -68,7 +68,21 @@ defineProps<ImagePresentationProps>()
   background-color: #333;
 }
 
-.root > div {
+@media screen and (max-width: 768px) {
+  .styles {
+    grid-template-columns: 1fr;
+  }
+
+    .left {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .styles {
+    grid-template-columns: 1fr;
+  }
 
 }
 </style>

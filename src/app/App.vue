@@ -6,8 +6,8 @@
       <router-view/>
     </div>
 
-    <div :class="$style.footer">
-      <VFooter/>
+    <div>
+      <VFooter :class="$style.footer"/>
     </div>
   </div>
 </template>
@@ -25,13 +25,14 @@ import { VFooter } from './components/VFooter'
   grid-template-areas: 'Header' 'Content' 'Footer';
   align-items: center;
   background-color: $main-bg-color;
-  width: 100%;
-  height: 100%;
+
 }
 
 .header {
   height: 40px;
   width: 100%;
+  padding-left: 240px;
+  padding-right: 240px;
 }
 
 .content {
@@ -40,6 +41,32 @@ import { VFooter } from './components/VFooter'
   max-width: 1390px;
   margin: 0 auto;
   height: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+
+  .header {
+    height: 67px;
+  }
+
+  .header, .footer {
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header, .footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header, .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 </style>
 
@@ -70,6 +97,10 @@ body {
 a {
   text-decoration: none;
   color: $a-color;
+
+  &:hover {
+    color: #000;
+  }
 }
 
 h1 {
