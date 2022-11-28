@@ -1,16 +1,22 @@
 <template>
   <div :class="$style.root">
     <div :class="$style.dropdown">
-      <div :class="$style.title">Выбрать размер</div>
-      <img src="./arrowDown.svg"
+      <div :class="$style.title">
+        Выбрать размер
+      </div>
+
+      <img src="../../../assets/icons/arrowDown.svg"
            :class="[$style.arrow_down,
                     { [$style.arrow_up]: dropdown }]"
-           @click="handleClick">
+           @click="dropdown = !dropdown">
+
       <div v-show="dropdown"
            :class="[$style.dropdown_content, {
              [$style.opacity] : dropdown
            } ]">
-        <a v-for="size in sizes">
+        <a v-for="size in availableSizes"
+           :key="size"
+           @click="handleSelect">
           {{ size }}
         </a>
       </div>
@@ -22,17 +28,22 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { SizeSelectionProps, SizeSelectionEmits } from './SizeSelection.props'
+
+defineProps<SizeSelectionProps>()
+const event = defineEmits<SizeSelectionEmits>()
 
 const dropdown = ref(false)
 
-const sizes = [
-  'S',
-  'M',
-  'L',
-]
+// function handleClick(e: Event) {
+//   if (e.target !== e.currentTarget)
+//     dropdown.value = false
 
-function handleClick() {
-  dropdown.value = !dropdown.value
+//   dropdown.value = !dropdown.value
+// }
+
+function handleSelect(e: Event) {
+  event('select', e)
 }
 </script>
 
@@ -84,6 +95,8 @@ function handleClick() {
 }
 
 .dropdown_content {
+  display: grid;
+  grid-auto-flow: row;
   // opacity: 0;
   margin-left: 20px;
   transition: opacity 0.3s;

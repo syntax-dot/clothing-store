@@ -27,7 +27,7 @@ const selectedImage = ref(defaultMainImage)
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: 0.3s ease-in-out;
+  // transition: 0.3s ease-in-out;
 }
 
 .select {

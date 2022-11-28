@@ -10,7 +10,7 @@
 
     <div :class="$style.subscribe">
       <SubscribeButton :verified="emailVerified"
-                       @click="handleSubscribe"/>
+                       @subscribe="handleSubscribe"/>
     </div>
   </div>
 </template>

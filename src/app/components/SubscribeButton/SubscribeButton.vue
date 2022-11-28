@@ -1,15 +1,21 @@
 <template>
   <button :class="[$style.btn, {
-    [$style.btn_active]: verified
-  }]">
+            [$style.btn_active]: verified
+          }]"
+          @click="handleSubscribe">
     Подписаться
   </button>
 </template>
 
 <script lang="ts" setup>
-import { SubscribeButtonProps } from './SubscribeButton.props'
+import { SubscribeButtonProps, SubscribeButtonEmits } from './SubscribeButton.props'
 
 defineProps<SubscribeButtonProps>()
+const event = defineEmits<SubscribeButtonEmits>()
+
+function handleSubscribe(e: Event) {
+  event('subscribe')
+}
 </script>
 
 <style module lang="scss">

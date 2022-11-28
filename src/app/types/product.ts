@@ -1,4 +1,4 @@
-export enum Sizes {
+export enum Size {
   XXS = 34,
   XS = 36,
   S = 38,
@@ -15,7 +15,7 @@ export interface Product {
   reviews: number
   rating: number
   price: number
-  availableSizes: Sizes[]
+  availableSizes: Size[]
   oldPrice: number
   discountPercent: number
   stockPercent: number

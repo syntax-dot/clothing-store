@@ -14,8 +14,7 @@ defineProps<ProductViewProps>()
 
 <style module lang="scss">
 .root {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+
 }
 
 .image {

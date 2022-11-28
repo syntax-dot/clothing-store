@@ -64,7 +64,6 @@ function decrease() {
   transition: 0.1s ease-in-out;
 
   &:hover {
-    font-weight: bold;
     scale: 1.2;
   }
 }

@@ -1,6 +1,7 @@
 <template>
   <div :class="$style.root">
-    <BaseSelect/>
+    <SizeSelection :availableSizes="availableSizes"/>
+
     <div :class="$style.actions">
       <QuantitySelection v-model="productQuantity"/>
 
@@ -19,7 +20,7 @@
 import { ref } from 'vue'
 import { AddToCart } from '../AddToCart'
 import { AddToFavorites } from '../AddToFavorites'
-import { BaseSelect } from '../BaseSelect'
+import { SizeSelection } from '../SizeSelection'
 import { PopUp } from '../PopUp'
 import { QuantitySelection } from '../QuantitySelection'
 import { ProductActionsProps } from './ProductActions.props'

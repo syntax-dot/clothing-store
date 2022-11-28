@@ -1,4 +1,4 @@
-import { Sizes } from '../../types/product'
+import Sizes from '../../types/product'
 
 export interface ProductContentProps {
   title: string
