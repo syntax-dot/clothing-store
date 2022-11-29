@@ -4,7 +4,7 @@
          :key="image"
          :class="$style.image"
          :style="{ backgroundImage: `url(${image})` }"
-         @click="handleClick"/>
+         @click="handleClick(image)"/>
   </div>
 </template>
 
@@ -22,13 +22,8 @@ watch(selectedImage, () => {
 
 const emit = defineEmits<ImageSelectEmits>()
 
-function handleClick(event: Event): void {
-  if (!(event.target instanceof HTMLElement))
-    return
-
-  console.log((event.target as HTMLInputElement).value)
-
-  return emit('select', (event.target as HTMLInputElement).value)
+function handleClick(imageUrl: string): void {
+  return emit('select', imageUrl)
 }
 </script>
 

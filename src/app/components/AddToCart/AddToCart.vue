@@ -26,8 +26,6 @@ function handleClick() {
   background-color: $btn-bg-color;
   font-size: 1.4rem;
   text-align: center;
-  margin-left: 12px;
-  margin-right: 8px;
   border: none;
   // margin: 8px 28px 8px 28px;
   cursor: pointer;

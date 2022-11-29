@@ -1,12 +1,17 @@
 <template>
-  <div :class="$style.root">
-    <span>*</span>
-    <button/>
+  <div v-for="notification in notificationSet"
+       :key="notification.message"
+       :class="$style.root">
+    {{ notification.message }}
   </div>
 </template>
 
 <script lang="ts" setup>
+import { notificationSet } from '../../Notification/Notification'
 
+function ClearTimeout() {
+  timeout = 0
+}
 </script>
 
 <style module lang="scss">

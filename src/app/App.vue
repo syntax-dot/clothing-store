@@ -9,11 +9,13 @@
     <div>
       <VFooter :class="$style.footer"/>
     </div>
+    <NotificationView/>
   </div>
 </template>
 
 <script setup lang="ts">
 import { HeaderMenu } from './components/HeaderMenu'
+import { NotificationView } from './components/NotificationView'
 import { VFooter } from './components/VFooter'
 </script>
 
@@ -25,7 +27,6 @@ import { VFooter } from './components/VFooter'
   grid-template-areas: 'Header' 'Content' 'Footer';
   align-items: center;
   background-color: $main-bg-color;
-
 }
 
 .header {
@@ -41,8 +42,10 @@ import { VFooter } from './components/VFooter'
   max-width: 1390px;
   margin: 0 auto;
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+}
+
+.footer {
+  padding: 70px 240px 130px 240px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -71,6 +74,10 @@ import { VFooter } from './components/VFooter'
   .header, .footer {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .footer {
+    padding-top: 42px;
   }
 }
 </style>

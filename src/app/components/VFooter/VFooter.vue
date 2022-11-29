@@ -17,8 +17,6 @@ import { SubscriptionForm } from '../SubscriptionForm'
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding-bottom: 70px;
-  padding-top: 130px;
 }
 
 .content {

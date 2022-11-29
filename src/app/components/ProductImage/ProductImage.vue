@@ -66,7 +66,7 @@ const selectedImage = ref(defaultMainImage)
 @media screen and (max-width: 425px) {
   .root {
     height: 550px;
-    width: auto;
+    width: 100vw;
   }
 
 }
