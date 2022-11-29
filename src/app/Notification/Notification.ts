@@ -2,6 +2,7 @@ import { reactive } from 'vue'
 
 export interface Notification {
   message: string
+  toCard?: boolean
 }
 
 export const notificationSet = reactive(new Set<Notification>())

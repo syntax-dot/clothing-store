@@ -22,7 +22,6 @@ import { ref } from 'vue'
 import { AddToCart } from '../AddToCart'
 import { AddToFavorites } from '../AddToFavorites'
 import { SizeSelection } from '../SizeSelection'
-import { PopUp } from '../NotificationView'
 import { QuantitySelection } from '../QuantitySelection'
 import { ProductActionsProps } from './ProductActions.props'
 import { notify } from '../../Notification/Notification'
@@ -34,11 +33,16 @@ const productQuantity = ref(1)
 function handleCart() {
   notify({
     message: `Товар '${props.title}' добавлен в корзину в кол-ве: ${productQuantity.value} ед.`,
+    toCard: true,
   })
+  productQuantity.value = 1
 }
 
 function handleFavorite() {
-  console.log(`Товар '${props.title}' добавлен в избранное`)
+  notify({
+    message: `Товар '${props.title}' добавлен в избранное`,
+    toCard: false,
+  })
 }
 </script>
 
