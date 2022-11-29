@@ -3,8 +3,8 @@
     <div v-for="notification in notificationSet"
          :key="notification.message"
          :class="[$style.notification, {
-           [$style.green]: notification.toCard,
-           [$style.red]: !notification.toCard
+           [$style.red]: !notification.toCard,
+           [$style.green]: notification.toCard
          }]">
       {{ notification.message }}
     </div>
