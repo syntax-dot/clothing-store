@@ -103,4 +103,12 @@ defineProps<StylesPresentationProps>()
   }
 
 }
+
+@media screen and (max-width: 375px) {
+  .left,
+  .right {
+    height: 375px;
+  }
+
+}
 </style>

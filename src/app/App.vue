@@ -75,7 +75,9 @@ import { VFooter } from './components/VFooter'
 }
 
 @media screen and (max-width: 425px) {
-
+  .root {
+    display: block;
+  }
   .footer {
     padding-top: 42px;
   }

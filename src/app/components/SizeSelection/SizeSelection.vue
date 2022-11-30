@@ -3,7 +3,7 @@
     <div ref="dropdown"
          :class="$style.dropdown">
       <div :class="$style.title">
-        Выбрать размер
+        {{ selectedSize ?? 'Выбрать размер' }}
       </div>
 
       <img src="../../../assets/icons/arrowDown.svg"
@@ -13,9 +13,7 @@
 
       <div v-show="isDropdownShow"
 
-           :class="[$style.dropdown_select, {
-             [$style.opacity] : isDropdownShow
-           }]">
+           :class="$style.dropdown_select">
         <div v-for="size in availableSizes"
              :key="size"
              :class="$style.options"
@@ -40,6 +38,8 @@ const emit = defineEmits<SizeSelectionEmits>()
 const dropdown = ref<HTMLDivElement>()
 
 const isDropdownShow = ref(false)
+
+const selectedSize = ref<Size>()
 
 onMounted(() => {
   window.addEventListener('click', handleClick)
@@ -66,6 +66,7 @@ function handleClick(e: Event) {
 
 function handleSelect(size: Size) {
   console.log(`Выбран ${size} размер`)
+  selectedSize.value = size
 
   emit('select', size)
 

@@ -11,10 +11,13 @@
     <img :class="$style.icon"
          src="./icons/bag.svg"
          alt="bag">
+
+    <MobileMenu :class="$style.mobile_menu"/>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { MobileMenu } from '../MobileMenu'
 
 </script>
 
@@ -33,6 +36,17 @@
   &:hover {
     border-bottom: 1px solid #000;
     scale: 1.1;
+  }
+}
+
+.mobile_menu {
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+
+  .mobile_menu {
+    display: block;
   }
 }
 </style>

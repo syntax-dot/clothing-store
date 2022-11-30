@@ -36,13 +36,13 @@ const throttledFn = useThrottleFn(() => {
 }, 100)
 
 // В случае если нам всё равно на производительность
-function handleScroll(e: Event) {
-  scrollTop.value = window.scrollY
+// function handleScroll(e: Event) {
+//   scrollTop.value = window.scrollY
 
-  handleOpacity(scrollTop.value, oldScrollTop.value)
+//   handleOpacity(scrollTop.value, oldScrollTop.value)
 
-  oldScrollTop.value = scrollTop.value
-}
+//   oldScrollTop.value = scrollTop.value
+// }
 
 function handleOpacity(scrollTop: number, oldScroll: number) {
   if (scrollTop > 100 && scrollTop > oldScroll)
