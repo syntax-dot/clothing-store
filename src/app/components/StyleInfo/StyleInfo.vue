@@ -1,29 +1,39 @@
 <template>
   <div :class="$style.info">
-    <div :class="$style.icon_info">
+    <div :class="$style.fullscreen">
       <img src="../../../assets/icons/fullScreen.svg" alt="fullScreen">
     </div>
-    <div :class="$style.bag_info">
+
+    <div :class="$style.bag">
       <img src="../../../assets/icons/bag.svg" alt="bag">
       <div>Узнай что на мне</div>
     </div>
-    <div :class="$style.likes_info">
+
+    <div :class="$style.likes">
       <div>
         <img src="../../../assets/icons/favoriteFull.svg" alt="likes">
-        <div>{{ likes }}</div>
+        <div>{{ randomLikes }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { StyleInfoProps } from './StyleInfo.props'
+
+const randomLikes = ref(getRandomLikes(200))
+
+function getRandomLikes(max: number): number {
+  return Math.floor(Math.random() * max)
+}
 
 defineProps<StyleInfoProps>()
 </script>
 
 <style module lang="scss">
 .info {
+  user-select: none;
   position: relative;
   display: grid;
   box-sizing: border-box;
@@ -41,21 +51,15 @@ defineProps<StyleInfoProps>()
   }
 }
 
-.icon_info {
+.fullscreen {
   text-align: end;
 }
 
-.bag_info {
+.bag {
   align-self: center;
 }
 
-.likes_info {
+.likes {
   align-self: end;
-}
-
-.icon_info,
-.bag_info,
-.likes_info > img, div {
-
 }
 </style>
