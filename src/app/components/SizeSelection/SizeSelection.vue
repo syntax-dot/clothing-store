@@ -12,7 +12,6 @@
            @click="isDropdownShow = !isDropdownShow">
 
       <div v-show="isDropdownShow"
-
            :class="$style.dropdown_select">
         <div v-for="size in availableSizes"
              :key="size"
@@ -80,6 +79,12 @@ function handleSelect(size: Size) {
   grid-template-rows: max-content max-content;
 }
 
+.root > a {
+  text-decoration: underline;
+  position: relative;
+  top: 50px;
+}
+
 .title {
   font-size: 1.4rem;
   margin: 4px 8px;
@@ -128,12 +133,6 @@ function handleSelect(size: Size) {
   &:hover {
   color: #000;
 }
-}
-
-.root > a {
-  text-decoration: underline;
-  position: relative;
-  top: 50px;
 }
 
 @media screen and (max-width: 1024px) {

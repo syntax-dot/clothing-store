@@ -33,7 +33,7 @@ function handleClick() {
 
   &:hover {
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
-    scale: 1.05;
+    scale: 1.02;
   }
 }
 </style>

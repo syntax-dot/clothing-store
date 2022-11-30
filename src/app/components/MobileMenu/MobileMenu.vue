@@ -78,6 +78,7 @@ function handleClick(e: Event) {
   height: 277px;
   background-color: #fff;
   padding: 80px 25px 40px 30px;
+  animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .links {
@@ -88,5 +89,18 @@ function handleClick(e: Event) {
 .links > a {
   text-transform: uppercase;
   font-size: 1.4rem;
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 </style>

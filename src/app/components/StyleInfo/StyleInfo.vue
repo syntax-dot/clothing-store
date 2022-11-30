@@ -2,18 +2,22 @@
   <div :class="$style.info">
     <div :class="$style.fullscreen">
       <img src="../../../assets/icons/fullScreen.svg"
-           alt="fullScreen"
-           @click="fullScreen">
+           :class="$style.cursor"
+           alt="fullScreen">
     </div>
 
     <div :class="$style.bag">
-      <img src="../../../assets/icons/bag.svg" alt="bag">
+      <img :class="$style.cursor"
+           src="../../../assets/icons/bag.svg"
+           alt="bag">
       <div>Узнай что на мне</div>
     </div>
 
     <div :class="$style.likes">
       <div>
-        <img src="../../../assets/icons/favoriteFull.svg" alt="likes">
+        <img :class="$style.cursor"
+             src="../../../assets/icons/favoriteFull.svg"
+             alt="likes">
         <div>{{ randomLikes }}</div>
       </div>
     </div>
@@ -31,10 +35,6 @@ const randomLikes = ref(getRandomLikes(200))
 
 function getRandomLikes(max: number): number {
   return Math.floor(Math.random() * max)
-}
-
-function handleClick() {
-
 }
 </script>
 
@@ -55,6 +55,15 @@ function handleClick() {
 
   &:hover {
     opacity: 1;
+  }
+}
+
+.cursor {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    scale: 1.1;
   }
 }
 
