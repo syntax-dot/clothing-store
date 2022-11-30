@@ -134,4 +134,11 @@ function handleSelect(size: Size) {
   position: relative;
   top: 50px;
 }
+
+@media screen and (max-width: 1024px) {
+
+  .dropdown {
+    width: 290px;
+  }
+}
 </style>

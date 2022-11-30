@@ -76,7 +76,7 @@ function handleFavorite() {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
   .actions {
     grid-template-columns: max-content;
     margin-top: 12px;

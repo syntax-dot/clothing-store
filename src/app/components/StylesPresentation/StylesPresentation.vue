@@ -73,7 +73,7 @@ defineProps<StylesPresentationProps>()
   gap: 12px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .styles {
     grid-template-columns: 1fr;
   }

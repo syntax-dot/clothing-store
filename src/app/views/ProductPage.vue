@@ -49,7 +49,7 @@ const product: Product = {
   grid-template-columns: 1fr 1fr;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
 
   .root {
     grid-template-columns: 1fr;
