@@ -34,7 +34,7 @@ function handleInput(event: Event): void {
 .root {
   box-sizing: border-box;
   padding-top: 16px;
-  padding-bottom: 24px;
+  // padding-bottom: 24px;
 }
 
 .input_form {

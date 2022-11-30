@@ -29,7 +29,7 @@ function handleSubscribe(e: Event) {
   background: transparent;
   font-size: 1.4rem;
   text-align: center;
-  margin: 8px 28px 8px 28px;
+  // margin: 8px 28px 8px 28px;
   transition: .3s ease-in-out;
 }
 
