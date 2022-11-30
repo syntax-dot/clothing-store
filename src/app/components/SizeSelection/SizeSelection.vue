@@ -1,18 +1,20 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.dropdown">
+    <div ref="dropdown"
+         :class="$style.dropdown">
       <div :class="$style.title">
         Выбрать размер
       </div>
 
       <img src="../../../assets/icons/arrowDown.svg"
            :class="[$style.arrow_down,
-                    { [$style.arrow_up]: dropdown }]"
-           @click="dropdown = !dropdown">
+                    { [$style.arrow_up]: isDropdownShow }]"
+           @click="isDropdownShow = !isDropdownShow">
 
-      <div v-show="dropdown"
+      <div v-show="isDropdownShow"
+
            :class="[$style.dropdown_select, {
-             [$style.opacity] : dropdown
+             [$style.opacity] : isDropdownShow
            }]">
         <div v-for="size in availableSizes"
              :key="size"
@@ -23,26 +25,51 @@
       </div>
     </div>
 
-    <a v-show="!dropdown" href="#"> Определить размер </a>
+    <a v-show="!isDropdownShow" href="#"> Определить размер </a>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { SizeSelectionProps, SizeSelectionEmits } from './SizeSelection.props'
 import { Size } from '../../types/product'
 
 defineProps<SizeSelectionProps>()
 const emit = defineEmits<SizeSelectionEmits>()
 
-const dropdown = ref(false)
+const dropdown = ref<HTMLDivElement>()
+
+const isDropdownShow = ref(false)
+
+onMounted(() => {
+  window.addEventListener('click', handleClick)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('click', handleClick)
+})
+
+function handleClick(e: Event) {
+  if (e.target instanceof HTMLElement) {
+    let element = e.target
+
+    while (element.parentElement !== null) {
+      if (element === dropdown.value)
+        return
+
+      element = element.parentElement
+    }
+
+    isDropdownShow.value = false
+  }
+}
 
 function handleSelect(size: Size) {
   console.log(`Выбран ${size} размер`)
 
   emit('select', size)
 
-  dropdown.value = false
+  isDropdownShow.value = false
 }
 </script>
 

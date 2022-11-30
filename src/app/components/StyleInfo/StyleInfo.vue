@@ -1,7 +1,9 @@
 <template>
   <div :class="$style.info">
     <div :class="$style.fullscreen">
-      <img src="../../../assets/icons/fullScreen.svg" alt="fullScreen">
+      <img src="../../../assets/icons/fullScreen.svg"
+           alt="fullScreen"
+           @click="fullScreen">
     </div>
 
     <div :class="$style.bag">
@@ -22,13 +24,18 @@
 import { ref } from 'vue'
 import { StyleInfoProps } from './StyleInfo.props'
 
+defineProps<StyleInfoProps>()
+defineEmits<StyleInfoProps>()
+
 const randomLikes = ref(getRandomLikes(200))
 
 function getRandomLikes(max: number): number {
   return Math.floor(Math.random() * max)
 }
 
-defineProps<StyleInfoProps>()
+function handleClick() {
+
+}
 </script>
 
 <style module lang="scss">
