@@ -1,7 +1,7 @@
 import { groupBy, mapValues } from 'lodash'
 const images = import.meta.glob('../../../assets/products/**/*', { eager: true })
 
-const allImagesPaths: [string, string][] = Object.entries(images).map(v => [prepareKey(v[0]), v[1].default])
+const allImagesPaths: [string, string][] = Object.entries(images).map(v => [prepareKey(v[0]), v[1]?.default])
 
 function prepareKey(key: string): string {
   return key.split('/').slice(-2).join('/')

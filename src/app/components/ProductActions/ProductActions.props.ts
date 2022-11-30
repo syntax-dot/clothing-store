@@ -1,5 +1,6 @@
-import Sizes from '../../types/product'
+import { Size } from '../../types/product'
+
 export interface ProductActionsProps {
   title: string
-  availableSizes: Sizes[]
+  availableSizes: Size[]
 }
