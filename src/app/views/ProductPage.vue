@@ -3,8 +3,11 @@
     <ProductView :productImages="product.images"/>
 
     <ProductContent :content="product"/>
+  </div>
 
-    <!-- <StylesPresentation :presetnationImages="presentationPaths"/> -->
+  <div :class="$style.presentation">
+    <StylesPresentation :presetnationImages="rightImagePaths"
+                        :mainImage="defaultMainImage"/>
   </div>
 </template>
 
@@ -17,6 +20,11 @@ import { Size, Product } from '../types/product'
 
 // const productPaths = imagesPaths.PyjamasForGirls
 const presentationPaths = imagesPaths.StylesImages
+const defaultMainImage = presentationPaths.find(v => v.includes('main')) ?? presentationPaths[0]
+const rightImagePaths = presentationPaths.filter(v => !v.includes('main'))
+
+console.log(defaultMainImage)
+console.log(rightImagePaths)
 
 const product: Product = {
   id: 1,
