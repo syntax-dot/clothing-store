@@ -7,21 +7,7 @@
       <div :class="$style.left">
         <div :class="$style.left_image"
              :style="{ backgroundImage: `url(${mainImage})` }">
-          <div :class="$style.info">
-            <div :class="$style.icon_info">
-              <img src="../../../assets/icons/fullScreen.svg" alt="fullScreen">
-            </div>
-            <div :class="$style.bag_info">
-              <img src="../../../assets/icons/bag.svg" alt="bag">
-              <div>Узнай что на мне</div>
-            </div>
-            <div :class="$style.likes_info">
-              <div>
-                <img src="../../../assets/icons/favoriteFull.svg" alt="likes">
-                <div>200</div>
-              </div>
-            </div>
-          </div>
+          <StyleInfo :likes="200"/>
         </div>
       </div>
 
@@ -30,21 +16,7 @@
              :key="image"
              :style="{ backgroundImage: `url(${image})` }"
              :class="$style.right_image">
-          <div :class="$style.info">
-            <div :class="$style.icon_info">
-              <img src="../../../assets/icons/fullScreen.svg" alt="fullScreen">
-            </div>
-            <div :class="$style.bag_info">
-              <img src="../../../assets/icons/bag.svg" alt="bag">
-              <div>Узнай что на мне</div>
-            </div>
-            <div :class="$style.likes_info">
-              <div>
-                <img src="../../../assets/icons/favoriteFull.svg" alt="likes">
-                <div>200</div>
-              </div>
-            </div>
-          </div>
+          <StyleInfo :likes="200"/>
         </div>
       </div>
     </div>
@@ -52,6 +24,7 @@
 </template>
 
 <script lang="ts" setup>
+import { StyleInfo } from '../StyleInfo'
 import { StylesPresentationProps } from './StylesPresentation.props'
 defineProps<StylesPresentationProps>()
 </script>
@@ -81,7 +54,7 @@ defineProps<StylesPresentationProps>()
 
 .left,
 .right {
-  width: 686px;
+  max-width: 100%;
   height: 686px;
 }
 
@@ -91,36 +64,6 @@ defineProps<StylesPresentationProps>()
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.info {
-  position: relative;
-  display: grid;
-  box-sizing: border-box;
-  font-size: 1.4rem;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.3s;
-  padding: 12px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.icon_info {
-  text-align: end;
-}
-
-.bag_info {
-  align-self: center;
-}
-
-.likes_info {
-  align-self: end;
 }
 
 .right {
