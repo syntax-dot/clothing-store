@@ -100,7 +100,7 @@ import { VFooter } from './components/VFooter'
 #app,
 body,
 html {
-  height: 100%;
+  // height: 100%;
   width: 100%;
 }
 
