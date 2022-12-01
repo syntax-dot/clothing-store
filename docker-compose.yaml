@@ -1,11 +1,10 @@
 version: '3.8'
 services:
   frontend:
-    image: clothing-store
+    image: syntaxname/clothing-store-frontend:latest
     build:
       args:
         - NODE_ENV=production
       context: .
-      dockerfile: ./Dockerfile
     ports:
       - "8080:80"
