@@ -5,7 +5,6 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 3030:3030
     restart: always
     volumes:
       - ./nginx/conf/:/etc/nginx/conf.d/:ro
