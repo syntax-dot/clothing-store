@@ -24,6 +24,6 @@ services:
       args:
         - NODE_ENV=production
       context: .
-      dockerfile: src/Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - "8080:80"

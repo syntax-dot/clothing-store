@@ -6,6 +6,6 @@ services:
       args:
         - NODE_ENV=production
       context: .
-      dockerfile: .
+      dockerfile: ./Dockerfile
     ports:
       - "8080:80"
