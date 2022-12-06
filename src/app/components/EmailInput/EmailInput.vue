@@ -54,7 +54,6 @@ function handleInput(event: Event): void {
   background: transparent;
   outline: none;
   border: none;
-  min-width: 300px;
 
   &:focus + .input_form {
     border-bottom: 1px solid #000;

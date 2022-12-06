@@ -26,14 +26,15 @@ defineProps<ProductContentProps>()
   display: grid;
   grid-template-rows: repeat(4, max-content);
   gap: 28px;
-  margin-top: 24px;
-  margin-left: 36px;
+  // margin-top: 24px;
+  // margin-left: 36px;
+  margin: 24px 36px;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 768px) {
-  .root {
-    margin-left: 20px;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   .root {
+//     margin-left: 20px;
+//   }
+// }
 </style>

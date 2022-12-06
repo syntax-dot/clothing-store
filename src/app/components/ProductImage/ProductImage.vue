@@ -62,11 +62,17 @@ const selectedImage = ref(defaultMainImage)
   }
 }
 
-// @media screen and (max-width: 425px) {
-//   .root {
-//     height: 550px;
-//     width: 100vw;
-//   }
+@media screen and (max-width: 680px) {
+  .root {
+    height: 100vh;
+  }
 
-// }
+}
+
+@media screen and (max-width: 425px) {
+  .root {
+    height: 550px;
+  }
+
+}
 </style>

@@ -40,12 +40,20 @@ import { VFooter } from './components/VFooter'
   box-sizing: border-box;
   padding-top: 24px;
   max-width: 1390px;
-  margin: 0 auto;
+
   height: 100%;
 }
 
 .footer {
   padding: 70px 240px 130px 240px;
+}
+
+@media screen and (min-width: 1390px) {
+
+  .content {
+    margin: 0 auto;
+  }
+
 }
 
 @media screen and (max-width: 1440px) {
