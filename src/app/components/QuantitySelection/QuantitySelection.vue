@@ -6,6 +6,7 @@
     </button>
 
     <input :class="$style.amount_input"
+           type="number"
            :value="modelValue"
            @input="handleInput">
 
@@ -28,7 +29,7 @@ function handleInput(event: Event): void {
   if (!(event.target instanceof HTMLElement))
     return
 
-  return emit('update:modelValue', (event.target as HTMLInputElement).value)
+  return emit('update:modelValue', ((event.target as HTMLInputElement).value) as number)
 }
 
 function increase() {
@@ -70,6 +71,12 @@ function decrease() {
   border: none;
 }
 
+// Убрать стрелки на инпут
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .not_active {
   color: transparent;
 }
