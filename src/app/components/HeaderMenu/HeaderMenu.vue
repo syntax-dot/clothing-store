@@ -56,10 +56,9 @@ function handleOpacity(scrollTop: number, oldScroll: number) {
 .root {
   position: sticky;
   top: 0;
-  display: grid;
-  grid-template-columns: max-content max-content;
+  display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   box-sizing: border-box;
   width: 100%;
   height: 100%;

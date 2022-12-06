@@ -6,16 +6,17 @@
                   { [$style.cancel]: isDropdownShow }]"
          alt="Menu"
          @click="isDropdownShow = !isDropdownShow">
-
-    <div v-show="isDropdownShow"
-         :class="$style.dropdown_select">
-      <div :class="$style.links">
-        <a href="#">Постельное бельё</a>
-        <a href="#">Одежда для дома</a>
-        <a href="#">Одежда для улицы</a>
-        <a href="#">Выход</a>
+    <Transition name="dropdown_select" appear>
+      <div v-show="isDropdownShow"
+           :class="$style.dropdown_select">
+        <div :class="$style.links">
+          <a href="#">Постельное бельё</a>
+          <a href="#">Одежда для дома</a>
+          <a href="#">Одежда для улицы</a>
+          <a href="#">Выход</a>
+        </div>
       </div>
-    </div>
+    </Transition>
   </div>
 </template>
 
@@ -78,7 +79,6 @@ function handleClick(e: Event) {
   height: 277px;
   background-color: #fff;
   padding: 80px 25px 40px 30px;
-  animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .links {
@@ -89,6 +89,16 @@ function handleClick(e: Event) {
 .links > a {
   text-transform: uppercase;
   font-size: 1.4rem;
+}
+</style>
+
+<style>
+.dropdown_select-enter-active {
+  animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.dropdown_select-leave-active {
+  animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
 }
 
 @keyframes slide-in-top {

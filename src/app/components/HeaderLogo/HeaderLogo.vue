@@ -1,8 +1,6 @@
 <template>
-  <div :class="$style.root">
-    <div :class="$style.logo">
-      <h1 :class="$style.title">LOGO</h1>
-    </div>
+  <div :class="$style.logo">
+    <h1 :class="$style.title">LOGO</h1>
   </div>
 </template>
 
@@ -12,10 +10,6 @@
 
 <style module lang="scss">
 @import "../../../css/variables.scss";
-.root {
-  width: 100%;
-  height: 100%;
-}
 
 .logo {
   text-align: center;

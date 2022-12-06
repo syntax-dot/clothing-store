@@ -24,8 +24,7 @@ const selectedImage = ref(defaultMainImage)
 
 <style module lang="scss">
 .root {
-  height: 878px;
-  width: 686px;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,11 +62,11 @@ const selectedImage = ref(defaultMainImage)
   }
 }
 
-@media screen and (max-width: 425px) {
-  .root {
-    height: 550px;
-    width: 100vw;
-  }
+// @media screen and (max-width: 425px) {
+//   .root {
+//     height: 550px;
+//     width: 100vw;
+//   }
 
-}
+// }
 </style>
