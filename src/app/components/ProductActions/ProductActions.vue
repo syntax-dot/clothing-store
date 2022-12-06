@@ -3,7 +3,7 @@
     <SizeSelection :availableSizes="availableSizes"/>
 
     <div :class="$style.actions">
-      <QuantitySelection v-model="productQuantity"/>
+      <QuantitySelection v-model.number="productQuantity"/>
 
       <div :class="$style.actions_btns">
         <AddToCart @added-to-cart="handleCart"/>

@@ -29,7 +29,7 @@ function handleInput(event: Event): void {
   if (!(event.target instanceof HTMLElement))
     return
 
-  return emit('update:modelValue', ((event.target as HTMLInputElement).value) as number)
+  return emit('update:modelValue', parseInt((event.target as HTMLInputElement).value))
 }
 
 function increase() {
