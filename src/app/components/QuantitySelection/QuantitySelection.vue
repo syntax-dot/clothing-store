@@ -6,7 +6,8 @@
     </button>
 
     <input :class="$style.amount_input"
-           :value="modelValue">
+           :value="modelValue"
+           @input="handleInput">
 
     <button :class="[$style.decrease, {
               [$style.not_active]: modelValue <= 1,
@@ -22,6 +23,13 @@ import { QuantitySelectionProps, QuantitySelectionEmits } from './QuantitySelect
 
 const props = defineProps<QuantitySelectionProps>()
 const emit = defineEmits<QuantitySelectionEmits>()
+
+function handleInput(event: Event): void {
+  if (!(event.target instanceof HTMLElement))
+    return
+
+  return emit('update:modelValue', (event.target as HTMLInputElement).value)
+}
 
 function increase() {
   emit('update:modelValue', props.modelValue + 1)
