@@ -1,18 +1,19 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.increase"
-         @click="increase">
+    <button :class="$style.increase"
+            @click="increase">
       +
-    </div>
-    <div :class="$style.amount">
-      {{ modelValue }}
-    </div>
-    <div :class="[$style.decrease, {
-           [$style.not_active]: modelValue <= 1,
-         }]"
-         @click="decrease">
+    </button>
+
+    <input :class="$style.amount_input"
+           :value="modelValue">
+
+    <button :class="[$style.decrease, {
+              [$style.not_active]: modelValue <= 1,
+            }]"
+            @click="decrease">
       –
-    </div>
+    </button>
   </div>
 </template>
 
@@ -40,7 +41,7 @@ function decrease() {
 @import "../../../css/variables.scss";
 .root {
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 145px;
   height: 44px;
   background-color: $quantity-selection;
@@ -49,8 +50,19 @@ function decrease() {
   user-select: none;
 }
 
-.amount {
+.amount_input,
+.increase,
+.decrease {
   font-size: 1.4rem;
+  text-align: center;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.amount_input {
+
 }
 
 .not_active {
@@ -59,12 +71,10 @@ function decrease() {
 
 .increase,
 .decrease {
-  font-size: 1.4rem;
   cursor: pointer;
   transition: 0.1s ease-in-out;
 
   &:hover {
-    scale: 1.2;
   }
 }
 </style>
