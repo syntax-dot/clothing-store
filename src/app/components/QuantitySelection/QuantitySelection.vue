@@ -53,6 +53,7 @@ function decrease() {
 .amount_input,
 .increase,
 .decrease {
+  cursor: pointer;
   font-size: 1.4rem;
   text-align: center;
   background: transparent;
@@ -61,20 +62,7 @@ function decrease() {
   border: none;
 }
 
-.amount_input {
-
-}
-
 .not_active {
   color: transparent;
-}
-
-.increase,
-.decrease {
-  cursor: pointer;
-  transition: 0.1s ease-in-out;
-
-  &:hover {
-  }
 }
 </style>
