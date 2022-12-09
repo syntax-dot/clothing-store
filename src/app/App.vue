@@ -40,7 +40,7 @@ import { VFooter } from './components/VFooter'
   box-sizing: border-box;
   padding-top: 24px;
   max-width: 1390px;
-
+  width: 100%;
   height: 100%;
 }
 
