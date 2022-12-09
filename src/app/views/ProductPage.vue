@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.root">
-    <ProductView :productImages="product.images"/>
+    <ProductImage :imagesPaths="product.images"/>
 
     <ProductContent :content="product"/>
   </div>
@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import { ProductContent } from '../components/ProductContent'
-import { ProductView } from '../components/ProductView'
+import { ProductImage } from '../components/ProductImage'
 import { imagesPaths } from '../components/ProductView/ImagesPath'
 import { StylesPresentation } from '../components/StylesPresentation'
 import { Size, Product } from '../types/product'

@@ -138,7 +138,7 @@ function handleSelect(size: Size) {
 @media screen and (max-width: 1024px) {
 
   .dropdown {
-    width: 290px;
+    width: 270px;
   }
 }
 </style>

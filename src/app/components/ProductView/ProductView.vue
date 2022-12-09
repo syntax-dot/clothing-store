@@ -1,11 +1,6 @@
-<template>
-  <div :class="$style.root">
-    <ProductImage :imagesPaths="productImages"/>
-  </div>
-</template>
+<template/>
 
 <script lang="ts" setup>
-import { ProductImage } from '../ProductImage'
 import { ProductViewProps } from './ProductView.props'
 
 defineProps<ProductViewProps>()
