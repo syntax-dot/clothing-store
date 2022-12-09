@@ -24,7 +24,7 @@ const selectedImage = ref(defaultMainImage)
 
 <style module lang="scss">
 .root {
-  height: 100%;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
